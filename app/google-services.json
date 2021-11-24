@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "142954399852",
+    "project_id": "wabo-36023",
+    "storage_bucket": "wabo-36023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142954399852:android:9de0c1d93e27e85f97b049",
+        "android_client_info": {
+          "package_name": "com.example.wabo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142954399852-0i2dmu87mc3laamno0006nfq5babtk03.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8IWFO8d-zvHCYxL2_f-i9Akjjdpr_VGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142954399852-0i2dmu87mc3laamno0006nfq5babtk03.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142954399852:android:a3a8c5071622ec4c97b049",
+        "android_client_info": {
+          "package_name": "com.smallacademy.userroles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142954399852-0i2dmu87mc3laamno0006nfq5babtk03.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8IWFO8d-zvHCYxL2_f-i9Akjjdpr_VGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142954399852-0i2dmu87mc3laamno0006nfq5babtk03.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
