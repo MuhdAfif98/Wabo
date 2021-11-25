@@ -4,22 +4,21 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/online"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/online"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Wabo">
+        android:theme="@style/Theme.Wabo.NoActionBar">
         <activity
             android:name=".StartPage"
             android:exported="true"
             android:theme="@style/Theme.Wabo.NoActionBar"/>
 
         <activity
-            android:name=".MainHeir"
-            android:exported="true" />
-        <activity
-            android:name=".MainAttorney"
-            android:exported="true" />
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Wabo.NoActionBar"/>
+
         <activity
             android:name=".Register"
             android:exported="true"
@@ -33,7 +32,8 @@
         <activity
             android:name=".splashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Wabo.NoActionBar">
+            android:theme="@style/Theme.Wabo.NoActionBar"
+            >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
@@ -41,11 +41,7 @@
         </intent-filter>
         </activity>
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Wabo.NoActionBar" />
+
     </application>
 
 </manifest>

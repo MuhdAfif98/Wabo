@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Register extends AppCompatActivity {
-    EditText username, email, password, phone;
+    EditText username, email, password;
     AppCompatButton registerBtn, goToLogin;
     boolean valid = true;
     FirebaseAuth auth;
@@ -45,7 +45,7 @@ public class Register extends AppCompatActivity {
         username = findViewById(R.id.registerUsername);
         email = findViewById(R.id.registerEmail);
         password = findViewById(R.id.registerPassword);
-        phone = findViewById(R.id.registerPhone);
+
         registerBtn = findViewById(R.id.registerBtn);
         goToLogin = findViewById(R.id.gotoLogin);
 
@@ -91,10 +91,9 @@ public class Register extends AppCompatActivity {
                 checkField(username);
                 checkField(email);
                 checkField(password);
-                checkField(phone);
 
                 //CHECKBOX VALIDATION
-                if (!(isAttorneyBox.isChecked() || isUserBox.isChecked()) || isHeirBox.isChecked()) {
+                if (!(isAttorneyBox.isChecked() || isUserBox.isChecked() || isHeirBox.isChecked())) {
                     Toast.makeText(Register.this, "Select the account type", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -111,7 +110,6 @@ public class Register extends AppCompatActivity {
                             Map<String, Object> userInfo = new HashMap<>();
                             userInfo.put("Username", username.getText().toString());
                             userInfo.put("Email", email.getText().toString());
-                            userInfo.put("PhoneNumber", phone.getText().toString());
 
                             //SPECIFY ROLES
                             if(isUserBox.isChecked()){
@@ -134,11 +132,11 @@ public class Register extends AppCompatActivity {
                                 finish();
                             }
                             else if(isAttorneyBox.isChecked()){
-                                startActivity(new Intent(getApplicationContext(), MainAttorney.class));
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 finish();
                             }
                             else if(isHeirBox.isChecked()){
-                                startActivity(new Intent(getApplicationContext(), MainHeir.class));
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 finish();
                             }
 

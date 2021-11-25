@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Register">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -115,12 +115,12 @@
                 android:hint="Example: wabo99"
                 android:paddingStart="8dp"
                 android:background="@drawable/edittext"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:elevation="6dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/usernameText"
-                android:drawableStart="@drawable/ic_baseline_lock_open_24"
+                android:drawableStart="@drawable/ic_baseline_person_24"
                 android:drawablePadding="6dp"/>
 
             <TextView
@@ -147,13 +147,13 @@
                 android:ems="10"
                 android:hint="Example: 123456"
                 android:background="@drawable/edittext"
-                android:inputType="textEmailAddress"
+                android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/passwordText"
                 android:elevation="6dp"
                 android:paddingStart="8dp"
-                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawableStart="@drawable/ic_baseline_lock_open_24"
                 android:drawablePadding="6dp"/>
 
             <RadioGroup
@@ -228,7 +228,7 @@
                 android:background="@drawable/button"
                 android:backgroundTint="#e9b982"
                 android:elevation="6dp"
-                android:text="Login"
+                android:text="Register"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

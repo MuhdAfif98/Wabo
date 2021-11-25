@@ -41,6 +41,7 @@ public class Login extends AppCompatActivity {
 
         email = findViewById(R.id.loginEmail);
         password = findViewById(R.id.loginPassword);
+
         loginBtn = findViewById(R.id.loginBtn);
         gotoRegister = findViewById(R.id.gotoRegister);
 
@@ -54,13 +55,13 @@ public class Login extends AppCompatActivity {
                     auth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
-                            Toast.makeText(Login.this,"Login Successfull",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this,"Login Successful",Toast.LENGTH_SHORT).show();
                             checkRole(authResult.getUser().getUid());
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-
+                            Toast.makeText(Login.this,"Login Failed",Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -97,13 +98,13 @@ public class Login extends AppCompatActivity {
 
                 //USER IS ATTORNEY
                 if(documentSnapshot.getString("isAttorney") != null){
-                    startActivity(new Intent(getApplicationContext(),MainAttorney.class));
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
                     finish();
                 }
 
                 //USER IS HEIR
                 if(documentSnapshot.getString("isHeir") != null){
-                    startActivity(new Intent(getApplicationContext(),MainHeir.class));
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
                     finish();
                 }
 
@@ -137,7 +138,12 @@ public class Login extends AppCompatActivity {
                     }
 
                     if(documentSnapshot.getString("isAttorney")!= null){
-                        startActivity(new Intent(getApplicationContext(),MainAttorney.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        finish();
+                    }
+
+                    if(documentSnapshot.getString("isHeir")!= null){
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         finish();
                     }
                 }
