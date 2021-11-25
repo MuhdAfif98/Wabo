@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/online"
-            android:layout_marginTop="-100dp"
+            android:layout_marginTop="-120dp"
             />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
             android:text="Welcome"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="210dp"
             android:layout_marginLeft="30dp"
             android:textFontWeight="400"
             android:textColor="@color/black"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/dancingscript_regular"
             android:text="Sign In"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="220dp"
             android:layout_marginLeft="40dp"
             android:textFontWeight="400"
             android:textColor="@color/black"
@@ -55,7 +55,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="330dp"
             android:visibility="visible">
 
 
@@ -66,7 +66,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="Email Address"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.057"
                 app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +99,7 @@
                 android:text="Password"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.057"
                 app:layout_constraintStart_toStartOf="parent"

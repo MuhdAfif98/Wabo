@@ -2,6 +2,7 @@ package com.example.wabo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,8 +27,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Register extends AppCompatActivity {
-    EditText fullName, email, password, phone;
-    Button registerBtn, goToLogin;
+    EditText username, email, password, phone;
+    AppCompatButton registerBtn, goToLogin;
     boolean valid = true;
     FirebaseAuth auth;
     FirebaseFirestore firestore;
@@ -41,7 +42,7 @@ public class Register extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
-        fullName = findViewById(R.id.registerName);
+        username = findViewById(R.id.registerUsername);
         email = findViewById(R.id.registerEmail);
         password = findViewById(R.id.registerPassword);
         phone = findViewById(R.id.registerPhone);
@@ -50,6 +51,7 @@ public class Register extends AppCompatActivity {
 
         isUserBox = findViewById(R.id.isUser);
         isAttorneyBox = findViewById(R.id.isAttorney);
+        isHeirBox = findViewById(R.id.isHeir);
 
         //CHECK BOXES LOGIC
         isUserBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -57,6 +59,7 @@ public class Register extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (compoundButton.isChecked()) {
                     isAttorneyBox.setChecked(false);
+                    isHeirBox.setChecked(false);
                 }
             }
         });
@@ -66,6 +69,17 @@ public class Register extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (compoundButton.isChecked()) {
                     isUserBox.setChecked(false);
+                    isHeirBox.setChecked(false);
+                }
+            }
+        });
+
+        isHeirBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (compoundButton.isChecked()) {
+                    isUserBox.setChecked(false);
+                    isAttorneyBox.setChecked(false);
                 }
             }
         });
@@ -74,13 +88,13 @@ public class Register extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkField(fullName);
+                checkField(username);
                 checkField(email);
                 checkField(password);
                 checkField(phone);
 
                 //CHECKBOX VALIDATION
-                if (!(isAttorneyBox.isChecked() || isUserBox.isChecked())) {
+                if (!(isAttorneyBox.isChecked() || isUserBox.isChecked()) || isHeirBox.isChecked()) {
                     Toast.makeText(Register.this, "Select the account type", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -95,7 +109,7 @@ public class Register extends AppCompatActivity {
                             Toast.makeText(Register.this, "Account Created", Toast.LENGTH_SHORT).show();
                             DocumentReference df = firestore.collection("Users").document(user.getUid());
                             Map<String, Object> userInfo = new HashMap<>();
-                            userInfo.put("FullName", fullName.getText().toString());
+                            userInfo.put("Username", username.getText().toString());
                             userInfo.put("Email", email.getText().toString());
                             userInfo.put("PhoneNumber", phone.getText().toString());
 
@@ -121,6 +135,10 @@ public class Register extends AppCompatActivity {
                             }
                             else if(isAttorneyBox.isChecked()){
                                 startActivity(new Intent(getApplicationContext(), MainAttorney.class));
+                                finish();
+                            }
+                            else if(isHeirBox.isChecked()){
+                                startActivity(new Intent(getApplicationContext(), MainHeir.class));
                                 finish();
                             }
 
