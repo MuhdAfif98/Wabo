@@ -2,6 +2,7 @@ package com.example.wabo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
     EditText email,password;
-    Button loginBtn,gotoRegister;
+    AppCompatButton loginBtn,gotoRegister;
     boolean valid = true;
     FirebaseAuth auth;
     FirebaseFirestore firestore;
