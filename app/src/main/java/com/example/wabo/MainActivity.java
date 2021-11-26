@@ -2,6 +2,7 @@ package com.example.wabo;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     TextView usernameText;
     Button logout;
     String userID;
+    CardView writewill;
 
     FirebaseFirestore firestore;
     FirebaseAuth auth;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         logout = findViewById(R.id.logoutBtn);
         usernameText = findViewById(R.id.usernameText);
+        writewill = findViewById(R.id.writewill);
 
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();

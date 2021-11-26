@@ -12,36 +12,29 @@
         <activity
             android:name=".StartPage"
             android:exported="true"
-            android:theme="@style/Theme.Wabo.NoActionBar"/>
-
+            android:theme="@style/Theme.Wabo.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Wabo.NoActionBar"/>
-
+            android:theme="@style/Theme.Wabo.NoActionBar" />
         <activity
             android:name=".Register"
             android:exported="true"
-            android:theme="@style/Theme.Wabo.NoActionBar"/>
-
+            android:theme="@style/Theme.Wabo.NoActionBar" />
         <activity
             android:name=".Login"
             android:exported="true"
-            android:theme="@style/Theme.Wabo.NoActionBar"/>
-
+            android:theme="@style/Theme.Wabo.NoActionBar" />
         <activity
             android:name=".splashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Wabo.NoActionBar"
-            >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Theme.Wabo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

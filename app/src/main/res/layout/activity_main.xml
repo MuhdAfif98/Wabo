@@ -7,14 +7,15 @@
     tools:context=".MainActivity"
     android:background="#f8f2eb">
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="416dp"
         android:layout_height="70dp"
         android:layout_marginTop="-7dp"
-        android:background="#0000ffff"
+        android:background="#f0d1ad"
 
-        android:elevation="2dp"
+        android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
@@ -27,9 +28,10 @@
             android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:src="@drawable/online"
-            app:civ_border_width="2dp" />
+            app:civ_border_width="0dp"
+            android:elevation="5dp"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -60,8 +62,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.145" />
 
-    <!--Write will-->
+    <!--Read will-->
     <androidx.cardview.widget.CardView
+        android:id="@+id/readwill"
         android:layout_width="180dp"
         android:layout_height="218dp"
         app:cardCornerRadius="15dp"
@@ -74,10 +77,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.307" >
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:background="@drawable/readwabo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/seoulhangang_bold"
+            android:text="Read Wabo"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
     </androidx.cardview.widget.CardView>
 
     <!--Write will-->
     <androidx.cardview.widget.CardView
+        android:id="@+id/writewill"
         android:layout_width="180dp"
         android:layout_height="218dp"
         app:cardCornerRadius="15dp"
@@ -92,8 +111,8 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="156dp"
-            android:background="@drawable/writewill"/>
+            android:layout_height="175dp"
+            android:background="@drawable/writewabo"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -109,6 +128,7 @@
 
     <!--My Account-->
     <androidx.cardview.widget.CardView
+        android:id="@+id/myaccount"
         android:layout_width="180dp"
         android:layout_height="218dp"
         app:cardCornerRadius="15dp"
@@ -119,10 +139,27 @@
         app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.711" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:background="@drawable/myaccount" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/seoulhangang_bold"
+            android:text="My Account"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    </androidx.cardview.widget.CardView>
 
     <!--Claim Will-->
     <androidx.cardview.widget.CardView
+        android:id="@+id/claimwabo"
         android:layout_width="180dp"
         android:layout_height="218dp"
         app:cardCornerRadius="15dp"
@@ -133,7 +170,23 @@
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.711" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:background="@drawable/claimwabo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/seoulhangang_bold"
+            android:text="Claim Wabo"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/logoutBtn"
