@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,8 +22,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
-    EditText email,password;
-    AppCompatButton loginBtn,gotoRegister;
+    EditText email, password;
+    AppCompatButton loginBtn, gotoRegister;
     boolean valid = true;
     FirebaseAuth auth;
     FirebaseFirestore firestore;
@@ -51,17 +50,17 @@ public class Login extends AppCompatActivity {
                 checkField(email);
                 checkField(password);
 
-                if(valid){
-                    auth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                if (valid) {
+                    auth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
-                            Toast.makeText(Login.this,"Login Successful",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
                             checkRole(authResult.getUser().getUid());
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Login.this,"Login Failed",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -71,14 +70,9 @@ public class Login extends AppCompatActivity {
         gotoRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Register.class));
+                startActivity(new Intent(getApplicationContext(), Register.class));
             }
         });
-
-
-
-
-
     }
 
     private void checkRole(String uid) {
@@ -88,23 +82,23 @@ public class Login extends AppCompatActivity {
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Log.d("TAG", "onSuccess: "+documentSnapshot.getData());
+                Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
 
                 //USER IS NORMAL USER
-                if(documentSnapshot.getString("isUser") != null){
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                if (documentSnapshot.getString("isUser") != null) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 }
 
                 //USER IS ATTORNEY
-                if(documentSnapshot.getString("isAttorney") != null){
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                if (documentSnapshot.getString("isAttorney") != null) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 }
 
                 //USER IS HEIR
-                if(documentSnapshot.getString("isHeir") != null){
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                if (documentSnapshot.getString("isHeir") != null) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 }
 
@@ -113,11 +107,11 @@ public class Login extends AppCompatActivity {
 
     }
 
-    public boolean checkField(EditText textField){
-        if(textField.getText().toString().isEmpty()){
+    public boolean checkField(EditText textField) {
+        if (textField.getText().toString().isEmpty()) {
             textField.setError("Error");
             valid = false;
-        }else {
+        } else {
             valid = true;
         }
 
@@ -127,23 +121,23 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             DocumentReference df = firestore.collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
             df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    if(documentSnapshot.getString("isUser")!= null){
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    if (documentSnapshot.getString("isUser") != null) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         finish();
                     }
 
-                    if(documentSnapshot.getString("isAttorney")!= null){
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    if (documentSnapshot.getString("isAttorney") != null) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         finish();
                     }
 
-                    if(documentSnapshot.getString("isHeir")!= null){
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    if (documentSnapshot.getString("isHeir") != null) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         finish();
                     }
                 }
@@ -151,7 +145,7 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(getApplicationContext(),Login.class));
+                    startActivity(new Intent(getApplicationContext(), Login.class));
                     finish();
                 }
             });
