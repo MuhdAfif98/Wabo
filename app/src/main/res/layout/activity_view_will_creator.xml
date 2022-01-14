@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#f8f2eb">
+    android:orientation="vertical"
+    tools:context=".ViewWill_Creator"
+    android:background="#f8f2eb"
+    android:fillViewport="true"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -61,7 +68,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.145" />
 
-    <!--Read will-->
+    <!--Verified will-->
     <androidx.cardview.widget.CardView
 
         android:layout_width="180dp"
@@ -77,10 +84,10 @@
         app:layout_constraintVertical_bias="0.307" >
 
         <ImageView
-            android:id="@+id/readwill"
+            android:id="@+id/verifiedwillC"
             android:layout_width="wrap_content"
-            android:layout_height="176dp"
-            android:background="@drawable/readwabo" />
+            android:layout_height="175dp"
+            android:background="@drawable/readwabo"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -88,15 +95,15 @@
             android:layout_marginTop="160dp"
             android:layout_marginLeft="30dp"
             android:fontFamily="@font/seoulhangang_bold"
-            android:text="Read Wabo"
+            android:text="Verified Will"
             android:textColor="@color/black"
             android:textSize="18dp" />
 
     </androidx.cardview.widget.CardView>
 
-    <!--Write will-->
+    <!--NotVerified Will-->
     <androidx.cardview.widget.CardView
-        android:id="@+id/writewill"
+
         android:layout_width="180dp"
         android:layout_height="218dp"
         app:cardCornerRadius="15dp"
@@ -110,25 +117,26 @@
         app:layout_constraintVertical_bias="0.307" >
 
         <ImageView
+            android:id="@+id/notverifiedwillC"
             android:layout_width="wrap_content"
             android:layout_height="175dp"
-            android:background="@drawable/writewabo"/>
+            android:background="@drawable/writewabo" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="160dp"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/seoulhangang_bold"
-                android:text="Write Wabo"
-                android:textColor="@color/black"
-                android:textSize="18dp" />
+        <TextView
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="160dp"
+            android:fontFamily="@font/seoulhangang_bold"
+            android:text="Not Verified Will"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
     </androidx.cardview.widget.CardView>
 
-    <!--My Account-->
+    <!--Claimed Will-->
     <androidx.cardview.widget.CardView
-        android:id="@+id/myaccount"
+
         android:layout_width="180dp"
         android:layout_height="218dp"
         app:cardCornerRadius="15dp"
@@ -142,9 +150,10 @@
         app:layout_constraintVertical_bias="0.711" >
 
         <ImageView
+            android:id="@+id/claimedwillC"
             android:layout_width="wrap_content"
             android:layout_height="175dp"
-            android:background="@drawable/myaccount" />
+            android:background="@drawable/writewabo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -152,52 +161,24 @@
             android:layout_marginTop="160dp"
             android:layout_marginLeft="30dp"
             android:fontFamily="@font/seoulhangang_bold"
-            android:text="My Account"
+            android:text="Claimed Will"
             android:textColor="@color/black"
             android:textSize="18dp" />
     </androidx.cardview.widget.CardView>
 
-    <!--Claim Will-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/claimwabo"
-        android:layout_width="180dp"
-        android:layout_height="218dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="5dp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="175dp"
-            android:background="@drawable/claimwabo"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
-            android:layout_marginLeft="30dp"
-            android:fontFamily="@font/seoulhangang_bold"
-            android:text="Claim Wabo"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
-    </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/logoutBtn"
+        android:id="@+id/mainpageBtn"
         android:layout_width="400dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:text="Logout"
+        android:text="Mainpage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

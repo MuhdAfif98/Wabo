@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewWill_Creator_Claimed2"
+    android:background="#f8f2eb"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="416dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="-7dp"
+            android:background="#f0d1ad"
+            android:elevation="6dp"
+            >
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/online"
+                app:civ_border_width="0dp"
+                android:elevation="5dp"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello,"
+            android:textSize="24dp"
+            android:fontFamily="@font/roboto_regular" />
+        <TextView
+            android:id="@+id/usernameText"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="-33dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24dp" >
+        </TextView>
+        <!--title & description will-->
+        <TextView
+            android:id="@+id/willtitle"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Will Title"
+            android:textSize="20dp"
+            android:fontFamily="@font/roboto_regular" />
+        <TextView
+            android:id="@+id/willdescription"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Will Description"
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
+        <!--Penerima will-->
+        <TextView
+            android:id="@+id/willtitle2"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Penerima"
+            android:textSize="20dp"
+            android:fontFamily="@font/roboto_regular" />
+
+        <TextView
+            android:id="@+id/willdescription2"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Will Description"
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
+        <!--Harta will-->
+        <TextView
+            android:id="@+id/willtitle3"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Jumlah Harta"
+            android:textSize="20dp"
+            android:fontFamily="@font/roboto_regular" />
+
+        <TextView
+            android:id="@+id/willdescription3"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Will Description"
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
+
+        <!--Wasiat will-->
+        <TextView
+            android:id="@+id/willtitle4"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Wasiat"
+            android:textSize="20dp"
+            android:fontFamily="@font/roboto_regular" />
+
+        <TextView
+            android:id="@+id/willdescription4"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Will Description"
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
+        <!--Media will-->
+        <TextView
+            android:id="@+id/willtitle5"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Media"
+            android:textSize="20dp"
+            android:fontFamily="@font/roboto_regular" />
+
+        <TextView
+            android:id="@+id/willdescription5"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Will Description"
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
+        <!--Digital Signature will-->
+        <TextView
+            android:id="@+id/willtitle6"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Digital Signature"
+            android:textSize="20dp"
+            android:fontFamily="@font/roboto_regular" />
+
+        <TextView
+            android:id="@+id/willdescription6"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Will Description"
+            android:textSize="15dp"
+            android:fontFamily="@font/roboto_regular" />
+
+
+    </LinearLayout>
+</ScrollView>
