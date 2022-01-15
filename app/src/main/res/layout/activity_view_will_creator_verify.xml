@@ -48,20 +48,26 @@
                 android:id="@+id/usernameText"
                 android:layout_marginLeft="65dp"
                 android:layout_marginTop="-33dp"
-                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="24dp" >
             </TextView>
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verified Will"
+                android:textSize="35dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto_bold" />
 
-
-        <ListView
-            android:layout_marginTop="10dp"
-            android:id="@+id/myListView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            ></ListView>
+            <ListView
+                android:id="@+id/myListView2"
+                android:layout_width="wrap_content"
+                android:layout_height="568dp"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"></ListView>
 
     </LinearLayout>
 </ScrollView>

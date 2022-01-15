@@ -33,14 +33,14 @@ public class NotVerifyAdaptor extends ArrayAdapter {
         View viewNotVerifyC  = inflater.inflate(R.layout.activity_view_will_creator_list_not_verify,null,true); //null, true
 
         //TextView evPickupPoint = listStudentView.findViewById(R.id.evPickupPoint);
-        TextView evwilltitle = viewNotVerifyC.findViewById(R.id.evwilltitle);
-        TextView evwilldescription = viewNotVerifyC.findViewById(R.id.evwilldescription);
+        TextView CUwilltitle = viewNotVerifyC.findViewById(R.id.CUwilltitle);
+        TextView CUwilldescription = viewNotVerifyC.findViewById(R.id.CUwilldescription);
 
         Will Will1 = ViewWill_Creator_ListNotVerify.get(position);
 
        // evPickupPoint.setText(Ambulance1.getPickuptime());
-        evwilltitle.setText(Will1.getwilltitle());
-        evwilldescription.setText(Will1.getwilldescription());
+        CUwilltitle.setText(Will1.getwilltitle());
+        CUwilldescription.setText(Will1.getwilldescription());
 
         return viewNotVerifyC;
     }

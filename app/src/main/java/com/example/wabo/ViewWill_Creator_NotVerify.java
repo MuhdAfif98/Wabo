@@ -5,7 +5,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,7 +34,7 @@ public class ViewWill_Creator_NotVerify extends AppCompatActivity {
     String userID;
     FirebaseFirestore firestore;
     FirebaseAuth auth;
-    DatabaseReference WaboDB;
+    Query WaboDB;
     ListView myListView;
     List<Will> ViewWill_Creator_ListNotVerify;
     Will Will1;
@@ -60,7 +63,7 @@ public class ViewWill_Creator_NotVerify extends AppCompatActivity {
         myListView = findViewById(R.id.myListView);
         ViewWill_Creator_ListNotVerify = new ArrayList<>();
 
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB");
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willStatus").equalTo("Unverified");
         Query query = WaboDB;//firebase query
         query.addValueEventListener(new ValueEventListener() {  //valueeventlistener..com.google
             @Override
@@ -84,6 +87,19 @@ public class ViewWill_Creator_NotVerify extends AppCompatActivity {
             }
         });
         //abih show adaptor
+
+        //Click on listview onclicklistener
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Will Will1 = ViewWill_Creator_ListNotVerify.get(i);
+                String willTitle = Will1.getwilltitle();
+                Intent intent = new Intent (getApplicationContext(),ViewWill_Creator_NotVerify2.class);
+                intent.putExtra("TitleNotVerify",willTitle);
+                startActivity(intent);
+            }
+        });
+        //abih Click on listview onclicklistener
 
 
     }

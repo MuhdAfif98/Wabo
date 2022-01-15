@@ -2,27 +2,27 @@ package com.example.wabo;
 
 public class Will {
 
-    String willtitle, willdescription;
+    String willTitle, willDescription;
 
 
-    public Will(String willtitle, String willdescription) {
-        this.willtitle = willtitle;
-        this.willdescription = willdescription;
+    public Will(String willTitle, String willDescription) {
+        this.willTitle = willTitle;
+        this.willDescription = willDescription;
     }
 
     public String getwilltitle() {
-        return willtitle;
+        return willTitle;
     }
 
-    public void setwilltitle(String willtitle) {
-        this.willtitle = willtitle;
+    public void setwilltitle(String willTitle) {
+        this.willTitle = willTitle;
     }
 
     public String getwilldescription() {
-        return willdescription;
+        return willDescription;
     }
 
-    public void setwilldescription(String willdescription) { this.willdescription = willdescription; }
+    public void setwilldescription(String willDescription) { this.willDescription = willDescription; }
 
     public Will() {
     }

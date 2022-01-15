@@ -46,8 +46,7 @@
         <TextView
             android:id="@+id/usernameText"
             android:layout_marginLeft="65dp"
-            android:layout_marginTop="-30dp"
-            android:textStyle="bold"
+            android:layout_marginTop="-33dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24dp" >
@@ -58,18 +57,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Unverified Will"
-            android:textSize="30dp"
-            android:textStyle="bold"
+            android:textSize="35dp"
+            android:textColor="@color/black"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/roboto_bold" />
 
         <ListView
-            android:layout_marginTop="10dp"
             android:id="@+id/myListView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            ></ListView>
+            android:layout_height="568dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"></ListView>
 
     </LinearLayout>
 </ScrollView>

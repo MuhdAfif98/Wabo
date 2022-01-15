@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ViewWill_Creator_Verify2"
-    android:background="#f8f2eb"
+    android:background="#FFEDED"
     >
 
 
@@ -36,134 +36,147 @@
                 android:elevation="5dp"/>
 
         </com.google.android.material.appbar.AppBarLayout>
+        <!--title & description will-->
         <TextView
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:id="@+id/CV2willtitle"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello,"
+            android:text="Will Title"
             android:textSize="24dp"
             android:fontFamily="@font/roboto_regular" />
         <TextView
-            android:id="@+id/usernameText"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="-33dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24dp" >
-        </TextView>
-        <!--title & description will-->
-        <TextView
-            android:id="@+id/willtitle"
+            android:id="@+id/CV2willdescription"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Will Title"
-            android:textSize="20dp"
+            android:text="Will Description"
+            android:textSize="22dp"
             android:fontFamily="@font/roboto_regular" />
-        <TextView
-            android:id="@+id/willdescription"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Will Description"
-            android:textSize="15dp"
-            android:fontFamily="@font/roboto_regular" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
         <!--Penerima will-->
         <TextView
-            android:id="@+id/willtitle2"
+            android:textColor="@color/black"
             android:layout_marginLeft="14dp"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Penerima"
-            android:textSize="20dp"
+            android:text="Penerima"
+            android:textSize="22dp"
             android:fontFamily="@font/roboto_regular" />
 
         <TextView
-            android:id="@+id/willdescription2"
+            android:id="@+id/CV2willpenerima"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Will Description"
-            android:textSize="15dp"
+            android:textSize="22dp"
             android:fontFamily="@font/roboto_regular" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
         <!--Harta will-->
         <TextView
-            android:id="@+id/willtitle3"
+            android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="14dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Jumlah Harta"
-            android:textSize="20dp"
+            android:text="Jumlah Harta"
+            android:textSize="22dp"
+
             android:fontFamily="@font/roboto_regular" />
 
         <TextView
-            android:id="@+id/willdescription3"
+            android:id="@+id/CV2willjumlah"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Will Description"
-            android:textSize="15dp"
+            android:textSize="22dp"
             android:fontFamily="@font/roboto_regular" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
         <!--Wasiat will-->
         <TextView
-            android:id="@+id/willtitle4"
+            android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="14dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Wasiat"
-            android:textSize="20dp"
+            android:text="Wasiat"
+            android:textSize="22dp"
             android:fontFamily="@font/roboto_regular" />
 
         <TextView
-            android:id="@+id/willdescription4"
+            android:id="@+id/CV2willwasiat"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Will Description"
-            android:textSize="15dp"
+            android:hint="Wasiat Description"
+            android:textSize="22dp"
             android:fontFamily="@font/roboto_regular" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
         <!--Media will-->
         <TextView
-            android:id="@+id/willtitle5"
+            android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="14dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Media"
-            android:textSize="20dp"
+            android:text="Media"
+            android:textSize="22dp"
             android:fontFamily="@font/roboto_regular" />
 
         <TextView
-            android:id="@+id/willdescription5"
+            android:id="@+id/CV2willmedia"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Will Description"
-            android:textSize="15dp"
+            android:hint="Will Media"
+            android:textSize="22dp"
             android:fontFamily="@font/roboto_regular" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
         <!--Digital Signature will-->
         <TextView
-            android:id="@+id/willtitle6"
+            android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="14dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Digital Signature"
-            android:textSize="20dp"
+            android:text="Digital Signature"
+            android:textSize="22dp"
             android:fontFamily="@font/roboto_regular" />
 
         <TextView
-            android:id="@+id/willdescription6"
+            android:id="@+id/CV2willdigitalsignature"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Will Description"
-            android:textSize="15dp"
+            android:hint="Will Digtal Description"
+            android:textSize="22dp"
             android:fontFamily="@font/roboto_regular" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
 
 
     </LinearLayout>

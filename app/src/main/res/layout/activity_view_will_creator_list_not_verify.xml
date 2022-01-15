@@ -4,33 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#FFCDDD"
+    android:layout_height="match_parent"
+    android:background="#F2FFE9"
     >
-
         <TextView
-            android:id="@+id/evwilltitle"
+            android:id="@+id/CUwilltitle"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:text="Unverified Will"
-            android:textSize="20dp"
+            android:textSize="24dp"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/roboto_bold" />
         <TextView
-            android:id="@+id/evwilldescription"
+            android:id="@+id/CUwilldescription"
             android:text="Unverified Will"
-            android:textStyle="bold"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:textSize="15dp" >
+            android:textSize="22dp" >
         </TextView>
     <ImageView
+        android:id="@+id/unverifiedwillC2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="-50dp"
         android:layout_marginLeft="350dp"
         android:src="@drawable/bookread"
         ></ImageView>
+
 
 </LinearLayout>
