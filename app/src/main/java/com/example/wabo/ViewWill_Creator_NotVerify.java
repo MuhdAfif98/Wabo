@@ -60,7 +60,7 @@ public class ViewWill_Creator_NotVerify extends AppCompatActivity {
         myListView = findViewById(R.id.myListView);
         ViewWill_Creator_ListNotVerify = new ArrayList<>();
 
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("WillDB");
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB");
         Query query = WaboDB;//firebase query
         query.addValueEventListener(new ValueEventListener() {  //valueeventlistener..com.google
             @Override

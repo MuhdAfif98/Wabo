@@ -8,7 +8,6 @@ public class Will {
     public Will(String willtitle, String willdescription) {
         this.willtitle = willtitle;
         this.willdescription = willdescription;
-
     }
 
     public String getwilltitle() {
@@ -23,9 +22,7 @@ public class Will {
         return willdescription;
     }
 
-    public void setwilldescription(String willdescription) {
-        this.willdescription = willdescription;
-    }
+    public void setwilldescription(String willdescription) { this.willdescription = willdescription; }
 
     public Will() {
     }
