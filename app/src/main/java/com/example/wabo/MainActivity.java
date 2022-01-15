@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     TextView usernameText;
     Button logout;
     String userID;
-    CardView writewill;
+    CardView writewill, myaccount;
 
     FirebaseFirestore firestore;
     FirebaseAuth auth;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         logout = findViewById(R.id.logoutBtn);
         usernameText = findViewById(R.id.usernameText);
         writewill = findViewById(R.id.writewill);
+        myaccount = findViewById(R.id.myaccount);
 
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         userID = auth.getCurrentUser().getUid();
 
         DocumentReference df = firestore.collection("Users").document(userID);
+
         df.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -53,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(),Login.class));
+                finish();
+            }
+        });
+
+        myaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),account.class));
                 finish();
             }
         });

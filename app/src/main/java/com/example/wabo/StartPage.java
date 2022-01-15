@@ -32,5 +32,6 @@ public class StartPage extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),Login.class));
             }
         });
+
     }
 }

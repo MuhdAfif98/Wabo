@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wabo.NoActionBar">
         <activity
+            android:name=".update_heir"
+            android:exported="false" />
+        <activity
+            android:name=".view_heir"
+            android:exported="false" />
+        <activity
+            android:name=".account_update"
+            android:exported="false" />
+        <activity
+            android:name=".account"
+            android:exported="false" />
+        <activity
             android:name=".StartPage"
             android:exported="true"
             android:theme="@style/Theme.Wabo.NoActionBar" />
