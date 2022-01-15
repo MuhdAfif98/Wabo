@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     TextView usernameText;
     Button logout;
     String userID;
-    CardView writewill;
+    CardView writewill,readwill;
 
     FirebaseFirestore firestore;
     FirebaseAuth auth;
@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         logout = findViewById(R.id.logoutBtn);
         usernameText = findViewById(R.id.usernameText);
         writewill = findViewById(R.id.writewill);
+
+        readwill = findViewById(R.id.readwill);
 
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
@@ -54,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(),Login.class));
                 finish();
+            }
+        });
+
+        readwill.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, viewWillAttorney.class));
             }
         });
     }
