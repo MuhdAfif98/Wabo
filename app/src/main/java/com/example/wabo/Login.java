@@ -1,11 +1,20 @@
 package com.example.wabo;
 
+import static androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG;
+import static androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_WEAK;
+import static androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.biometric.BiometricManager;
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -27,16 +36,23 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.concurrent.Executor;
+
 public class Login extends AppCompatActivity {
+    private static final int REQUEST_CODE = 100;
     EditText email, password;
-    AppCompatButton loginBtn, gotoRegister;
+    AppCompatButton loginBtn, gotoRegister, fingerprint;
     boolean valid = true;
     FirebaseAuth auth;
     FirebaseDatabase firebase;
     DatabaseReference df;
     private static final String TAG = "MyActivity";
     String userID;
+    private Executor executor;
+    private BiometricPrompt biometricPrompt;
+    private BiometricPrompt.PromptInfo promptInfo;
 
+    @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +69,19 @@ public class Login extends AppCompatActivity {
 
         loginBtn = findViewById(R.id.loginBtn);
         gotoRegister = findViewById(R.id.gotoRegister);
+        fingerprint = findViewById(R.id.fingerprintbtn);
+
+        fingerprint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                        .setTitle("Please verify")
+                        .setDescription("User authentication is required")
+                        .setNegativeButtonText("Cancel")
+                        .build();
+                getPrompt().authenticate(promptInfo);
+            }
+        });
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +113,43 @@ public class Login extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Register.class));
             }
         });
+        
     }
+
+    private BiometricPrompt getPrompt(){
+        Executor executor = ContextCompat.getMainExecutor(this);
+        BiometricPrompt.AuthenticationCallback callback = new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+
+                super.onAuthenticationError(errorCode, errString);
+                notifyUser(errString.toString());
+            }
+
+            @Override
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+                userID = auth.getCurrentUser().getUid();
+                notifyUser("Authentication succeed");
+                checkRole();
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                super.onAuthenticationFailed();
+                notifyUser("Authentication failed");
+            }
+        };
+
+        BiometricPrompt biometricPrompt = new BiometricPrompt(this, executor, callback);
+        return biometricPrompt;
+    }
+
+
+    private void notifyUser(String abc){
+        Toast.makeText(this, abc, Toast.LENGTH_SHORT).show();
+    }
+
 
     private void checkRole() {
         //EXTRACT DATA FROM DOCUMENT
