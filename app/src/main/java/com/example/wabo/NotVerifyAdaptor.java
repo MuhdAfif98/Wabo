@@ -41,7 +41,7 @@ public class NotVerifyAdaptor extends ArrayAdapter {
        // evPickupPoint.setText(Ambulance1.getPickuptime());
         CUwilltitle.setText(Will1.getwilltitle());
         CUwilldescription.setText(Will1.getwilldescription());
-
+//testing
         return viewNotVerifyC;
     }
 }
