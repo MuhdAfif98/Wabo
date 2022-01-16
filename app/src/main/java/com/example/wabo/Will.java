@@ -1,47 +1,38 @@
 package com.example.wabo;
 
-public class Will {
+public class will {
 
-    String willTitle, willDescription, willPenerima;
+    private String willTitle;
+    private String willPenerima;
+    private String willDescription;
 
+    public will(){}
 
-    public Will(String willTitle, String willDescription, String willPenerima) {
+    public will(String willTitle, String willPenerima, String willDescription) {
         this.willTitle = willTitle;
-        this.willDescription = willDescription;
         this.willPenerima = willPenerima;
-    }
-
-    public String getwilltitle() {
-        return willTitle;
-    }
-
-    public void setwilltitle(String willTitle) {
-        this.willTitle = willTitle;
-    }
-
-    public String getwilldescription() {
-        return willDescription;
-    }
-
-    public void setwilldescription(String willDescription) { this.willDescription = willDescription; }
-
-    public Will() {
+        this.willDescription = willDescription;
     }
 
     public String getWillTitle() {
         return willTitle;
     }
+
     public String getWillPenerima() {
         return willPenerima;
     }
     public String getWillDescription() {
         return willDescription;
     }
+
     public void setWillPenerima(String willPenerima) {
         this.willPenerima = willPenerima;
     }
+
     public void setWillTitle(String willTitle) {
         this.willTitle = willTitle;
     }
+
     public void setWillDescription(String willDescription) { this.willDescription = willDescription; }
+
 }
