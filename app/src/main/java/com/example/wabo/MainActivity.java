@@ -51,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
-        userID = auth.getCurrentUser().getUid();
-
         firebase = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app");
         df = firebase.getReference("Users");
 
@@ -61,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userID = auth.getCurrentUser().getUid();
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(),StartPage.class));
                 finish();
@@ -73,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         df.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                userID = auth.getCurrentUser().getUid();
                 String username = snapshot.child(userID).child("username").getValue(String.class);
                 usernameText.setText(username);
             }
