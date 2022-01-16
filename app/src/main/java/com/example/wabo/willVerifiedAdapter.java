@@ -10,19 +10,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+//import com.firebase.ui.database.FirebaseRecyclerAdapter;
+//import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import java.util.List;
 
 public class willVerifiedAdapter extends ArrayAdapter {
 
     public Activity mContext1;
-    List<will> willList;
+    List<Will> willList;
     // ImageView claimedwillC2;
 
 
-    public willVerifiedAdapter(Activity mContext1, List<will> willList){
+    public willVerifiedAdapter(Activity mContext1, List<Will> willList){
         super(mContext1,R.layout.activity_view_will_attorney_verified, willList);
         this.mContext1 = mContext1;
         this.willList = willList;
@@ -40,7 +40,7 @@ public class willVerifiedAdapter extends ArrayAdapter {
         TextView willTitle = viewClaimedC.findViewById(R.id.idTVWillTitleVerified);
         TextView willPenerima = viewClaimedC.findViewById(R.id.idTVWillPenerimaVerified);
 
-        will will = willList.get(position);
+        Will will = willList.get(position);
 
         // evPickupPoint.setText(Ambulance1.getPickuptime());
         willTitle.setText(will.getWillTitle());

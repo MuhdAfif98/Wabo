@@ -15,7 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+//import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -40,8 +40,8 @@ public class viewWillAttorneyVerified extends AppCompatActivity{
 
     Query WaboDB;
     ListView idRVVerifiedWill;
-    List<will> willList;
-    will will;
+    List<Will> willList;
+    Will will;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class viewWillAttorneyVerified extends AppCompatActivity{
                 willList.clear();
 
                 for(DataSnapshot studentDatasnap : datasnapshot.getChildren()){
-                    will will = studentDatasnap.getValue(will.class);
+                    Will will = studentDatasnap.getValue(Will.class);
                     willList.add(will);
 
                 }
@@ -81,7 +81,7 @@ public class viewWillAttorneyVerified extends AppCompatActivity{
         idRVVerifiedWill.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                will will = willList.get(i);
+                Will will = willList.get(i);
                 String willTitle = will.getWillTitle();
                 Intent intent = new Intent (getApplicationContext(),viewWillAttorneyVerifiedMore.class);
                 intent.putExtra("willTitle",willTitle);

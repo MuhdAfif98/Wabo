@@ -35,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
     CardView writewill;
     ImageView readwill;
 
-    CardView writewill,readwill;
-
-
     FirebaseFirestore firestore;
     FirebaseDatabase firebase;
     DatabaseReference df;
@@ -58,27 +55,20 @@ public class MainActivity extends AppCompatActivity {
         readwill = findViewById(R.id.readwill);
 
         auth = FirebaseAuth.getInstance();
-        firestore = FirebaseFirestore.getInstance();
+
 
         firebase = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app");
         df = firebase.getReference("Users");
 
-        DocumentReference df = firestore.collection("Users").document(userID);
-        df.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                usernameText.setText(value.getString("Username"));
-            }
-        });
-        readwill.setOnClickListener(new View.OnClickListener() {
+        getData();
+
+        readwill.setOnClickListener(new View.OnClickListener() {//keba
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),ViewWill_Creator.class));
+                checkRole();
                 finish();
             }
         });
-
-        getData();
 
 
         logout.setOnClickListener(new View.OnClickListener() {
@@ -108,13 +98,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        readwill.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, viewWillAttorney.class));
-            }
-        } );
     }
 
+    private void checkRole() {
+        //EXTRACT DATA FROM DOCUMENT
+        df.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String role = snapshot.child(userID).child("role").getValue(String.class);
+                if(role.equals("isUser")){
+                    startActivity(new Intent(getApplicationContext(),ViewWill_Creator.class));
+                }
+                else{
+                    startActivity(new Intent(getApplicationContext(),viewWillAttorney.class));
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
 }
 
