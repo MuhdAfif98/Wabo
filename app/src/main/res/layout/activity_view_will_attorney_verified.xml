@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".viewWillAttorneyVerified"
     android:background="#f8f2eb">
 
 
@@ -34,45 +34,54 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <LinearLayout
+    <ScrollView
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="65dp">
 
-        <Button
-            android:id="@+id/buttonWillUnverified"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:padding="10dp"
-            android:text="Unverified Will">
-        </Button>
-
-        <Button
-            android:id="@+id/buttonWillVerified"
-            android:text="Verified Will"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:padding="10dp">
-        </Button>
-
-        <Button
-            android:id="@+id/buttonWillRejected"
-            android:text="Rejected Will"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:padding="10dp">
-        </Button>
-
-        <Button
-            android:id="@+id/buttonReturn"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Return">
+            android:orientation="vertical"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="-58dp"
+            tools:layout_editor_absoluteY="65dp">
 
-        </Button>
+            <!--Rejected Will-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Verified Will">
 
-    </LinearLayout>
+                </TextView>
+                <!--Recycler view for Unverified Will-->
+                <ListView
+                    android:id="@+id/idRVVerifiedWill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="400dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"></ListView>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonReturn"
+                android:text="Return"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+            </Button>
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,22 +1,15 @@
 package com.example.wabo;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import android.os.Bundle;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class viewWillAttorney extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    willAdapter adapter;
-    DatabaseReference mbase;
+    Button willUnverified, willVerified, willRejected;
 
 
     @Override
@@ -24,28 +17,39 @@ public class viewWillAttorney extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_will_attorney);
 
-        mbase = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB");
+        willUnverified = findViewById(R.id.buttonWillUnverified);
+        willVerified = findViewById(R.id.buttonWillVerified);
+        willRejected = findViewById(R.id.buttonWillRejected);
 
-        recyclerView = findViewById(R.id.idRVRejectedWill);
+        willUnverified.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(viewWillAttorney.this, viewWillAttorneyUnverified.class));
+                finish();
+            }
+        });
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        willVerified.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                //startActivity(new Intent(viewWillAttorney.this, viewWillAttorneyVerified.class));
+                Intent intent = new Intent(viewWillAttorney.this,viewWillAttorneyVerified.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
-        FirebaseRecyclerOptions<will> options = new FirebaseRecyclerOptions.Builder<will>().setQuery(mbase, will.class).build();
+        willRejected.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(viewWillAttorney.this, viewWillAttorneyRejected.class));
+            }
+        });
 
-        adapter = new willAdapter(options);
+        Button buttonReturn = (Button) findViewById(R.id.buttonReturn);
 
-        recyclerView.setAdapter(adapter);
-    }
-
-    @Override protected void onStart()
-    {
-        super.onStart();
-        adapter.startListening();
-    }
-
-    @Override protected void onStop()
-    {
-        super.onStop();
-        adapter.stopListening();
+        buttonReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
     }
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D6E5FA"
+    >
+
+    <TextView
+        android:id="@+id/idTVWillTitleRejected"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:text="Claimed Will"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/roboto_bold" />
+    <TextView
+        android:id="@+id/idTVWillPenerimaRejected"
+        android:text="Claimed Will"
+        android:textStyle="bold"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:textSize="22dp" >
+    </TextView>
+
+</LinearLayout>
