@@ -19,7 +19,7 @@ public class ViewWill_Creator_Claimed2 extends AppCompatActivity {
     //fetch listview
     String TitleClaimed;
     Query WaboDB;
-    Will Will1;
+    will Will1;
     TextView CC2willtitle, CC2willdescription, CC2willpenerima, CC2willjumlah, CC2willwasiat;
 
     @Override

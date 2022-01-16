@@ -19,11 +19,11 @@ import java.util.List;
 public class ClaimedAdaptor extends ArrayAdapter {
 
     public Activity mContext3;
-    List<Will> ViewWill_Creator_ListClaimed;
+    List<will> ViewWill_Creator_ListClaimed;
    // ImageView claimedwillC2;
 
 
-    public ClaimedAdaptor(Activity mContext3, List<Will> ViewWill_Creator_ListClaimed){
+    public ClaimedAdaptor(Activity mContext3, List<will> ViewWill_Creator_ListClaimed){
         super(mContext3,R.layout.activity_view_will_creator_list_claimed, ViewWill_Creator_ListClaimed);
         this.mContext3 = mContext3;
         this.ViewWill_Creator_ListClaimed = ViewWill_Creator_ListClaimed;
@@ -50,11 +50,11 @@ public class ClaimedAdaptor extends ArrayAdapter {
         TextView CCwilltitle = viewClaimedC.findViewById(R.id.CCwilltitle);
         TextView CCwilldescription = viewClaimedC.findViewById(R.id.CCwilldescription);
 
-        Will Will1 = ViewWill_Creator_ListClaimed.get(position);
+        will Will1 = ViewWill_Creator_ListClaimed.get(position);
 
         // evPickupPoint.setText(Ambulance1.getPickuptime());
-        CCwilltitle.setText(Will1.getwilltitle());
-        CCwilldescription.setText(Will1.getwilldescription());
+        CCwilltitle.setText(Will1.getWillTitle());
+        CCwilldescription.setText(Will1.getWillDescription());
 
         return viewClaimedC;
     }

@@ -15,7 +15,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ViewWill_Creator_Verify2 extends AppCompatActivity {
     String TitleVerify;
     Query WaboDB;
-    Will Will1;
+    will Will1;
     TextView CV2willtitle, CV2willdescription, CV2willpenerima, CV2willjumlah, CV2willwasiat;
 
     @Override

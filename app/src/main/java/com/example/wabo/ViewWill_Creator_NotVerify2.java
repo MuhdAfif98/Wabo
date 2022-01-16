@@ -16,7 +16,7 @@ public class ViewWill_Creator_NotVerify2 extends AppCompatActivity {
     //fetch listview
     String TitleNotVerify;
     Query WaboDB;
-    Will Will1;
+    will Will1;
     TextView CU2willtitle, CU2willdescription, CU2willpenerima, CU2willjumlah, CU2willwasiat;
 
     @Override

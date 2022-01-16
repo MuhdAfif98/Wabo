@@ -38,8 +38,8 @@ public class ViewWill_Creator_Claimed extends AppCompatActivity {
 
     Query WaboDB;
     ListView myListView3;
-    List<Will> ViewWill_Creator_ListClaimed;
-    Will Will1;
+    List<will> ViewWill_Creator_ListClaimed;
+    will Will1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +71,7 @@ public class ViewWill_Creator_Claimed extends AppCompatActivity {
                 ViewWill_Creator_ListClaimed.clear();
 
                 for(DataSnapshot studentDatasnap : datasnapshot.getChildren()){
-                    Will Will1 = studentDatasnap.getValue(Will.class);
+                    will Will1 = studentDatasnap.getValue(will.class);
                     ViewWill_Creator_ListClaimed.add(Will1);
 
                 }
@@ -92,8 +92,8 @@ public class ViewWill_Creator_Claimed extends AppCompatActivity {
         myListView3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Will Will1 = ViewWill_Creator_ListClaimed.get(i);
-                String willTitle = Will1.getwilltitle();
+                will Will1 = ViewWill_Creator_ListClaimed.get(i);
+                String willTitle = Will1.getWillTitle();
                 Intent intent = new Intent (getApplicationContext(),ViewWill_Creator_Claimed2.class);
                 intent.putExtra("TitleClaimed",willTitle);
                 startActivity(intent);

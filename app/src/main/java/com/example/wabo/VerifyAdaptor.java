@@ -17,10 +17,10 @@ import java.util.List;
 public class VerifyAdaptor extends ArrayAdapter {
 
     public Activity mContext2;
-    List<Will> ViewWill_Creator_ListVerify;
+    List<will> ViewWill_Creator_ListVerify;
 
 
-    public VerifyAdaptor(Activity mContext2, List<Will> ViewWill_Creator_ListVerify){
+    public VerifyAdaptor(Activity mContext2, List<will> ViewWill_Creator_ListVerify){
         super(mContext2,R.layout.activity_view_will_creator_list_verify, ViewWill_Creator_ListVerify);
         this.mContext2 = mContext2;
         this.ViewWill_Creator_ListVerify = ViewWill_Creator_ListVerify;
@@ -38,11 +38,11 @@ public class VerifyAdaptor extends ArrayAdapter {
         TextView CVwilltitle = viewVerifyC.findViewById(R.id.CVwilltitle);
         TextView CVwilldescription = viewVerifyC.findViewById(R.id.CVwilldescription);
 
-        Will Will1 = ViewWill_Creator_ListVerify.get(position);
+        will Will1 = ViewWill_Creator_ListVerify.get(position);
 
         // evPickupPoint.setText(Ambulance1.getPickuptime());
-        CVwilltitle.setText(Will1.getwilltitle());
-        CVwilldescription.setText(Will1.getwilldescription());
+        CVwilltitle.setText(Will1.getWillTitle());
+        CVwilldescription.setText(Will1.getWillDescription());
 
         return viewVerifyC;
     }

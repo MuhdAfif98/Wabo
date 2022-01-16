@@ -15,10 +15,10 @@ import java.util.List;
 public class NotVerifyAdaptor extends ArrayAdapter {
 
     public Activity mContext;
-    List<Will> ViewWill_Creator_ListNotVerify;
+    List<will> ViewWill_Creator_ListNotVerify;
 
 
-    public NotVerifyAdaptor(Activity mContext, List<Will> ViewWill_Creator_ListNotVerify){
+    public NotVerifyAdaptor(Activity mContext, List<will> ViewWill_Creator_ListNotVerify){
         super(mContext,R.layout.activity_view_will_creator_list_not_verify, ViewWill_Creator_ListNotVerify);
         this.mContext = mContext;
         this.ViewWill_Creator_ListNotVerify = ViewWill_Creator_ListNotVerify;
@@ -36,11 +36,11 @@ public class NotVerifyAdaptor extends ArrayAdapter {
         TextView CUwilltitle = viewNotVerifyC.findViewById(R.id.CUwilltitle);
         TextView CUwilldescription = viewNotVerifyC.findViewById(R.id.CUwilldescription);
 
-        Will Will1 = ViewWill_Creator_ListNotVerify.get(position);
+        will Will1 = ViewWill_Creator_ListNotVerify.get(position);
 
        // evPickupPoint.setText(Ambulance1.getPickuptime());
-        CUwilltitle.setText(Will1.getwilltitle());
-        CUwilldescription.setText(Will1.getwilldescription());
+        CUwilltitle.setText(Will1.getWillTitle());
+        CUwilldescription.setText(Will1.getWillDescription());
 //testing
         return viewNotVerifyC;
     }

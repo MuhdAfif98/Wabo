@@ -36,8 +36,8 @@ public class ViewWill_Creator_Verify extends AppCompatActivity {
 
     Query WaboDB;
     ListView myListView2;
-    List<Will> ViewWill_Creator_ListVerify;
-    Will Will1;
+    List<will> ViewWill_Creator_ListVerify;
+    will Will1;
 
 
     @Override
@@ -71,7 +71,7 @@ public class ViewWill_Creator_Verify extends AppCompatActivity {
                 ViewWill_Creator_ListVerify.clear();
 
                 for(DataSnapshot studentDatasnap : datasnapshot.getChildren()){
-                    Will Will1 = studentDatasnap.getValue(Will.class);
+                    will Will1 = studentDatasnap.getValue(will.class);
                     ViewWill_Creator_ListVerify.add(Will1);
 
                 }
@@ -93,8 +93,8 @@ public class ViewWill_Creator_Verify extends AppCompatActivity {
         myListView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Will Will1 = ViewWill_Creator_ListVerify.get(i);
-                String willTitle = Will1.getwilltitle();
+                will Will1 = ViewWill_Creator_ListVerify.get(i);
+                String willTitle = Will1.getWillTitle();
                 Intent intent = new Intent (getApplicationContext(),ViewWill_Creator_Verify2.class);
                 intent.putExtra("TitleVerify",willTitle);
                 startActivity(intent);
