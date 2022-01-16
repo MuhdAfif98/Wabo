@@ -12,8 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wabo.NoActionBar">
         <activity
+
+            android:name=".viewWillAttorneyRejectedMore"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyVerifiedMore"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyUnverifiedMore"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyRejected"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyVerified"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyUnverified"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorney"
+            android:exported="false" />
+
             android:name=".profileRegistration"
             android:exported="true" />
+
         <activity
             android:name=".StartPage"
             android:exported="true"
