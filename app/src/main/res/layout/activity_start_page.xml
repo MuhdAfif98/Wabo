@@ -5,61 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StartPage"
-    android:fillViewport="true"
-    >
-
+    android:fillViewport="true">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-    >
+        android:layout_height="match_parent">
 
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:cardCornerRadius="5dp"
-        app:cardBackgroundColor="#f8f2eb"
+    android:background="#f8f2eb">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/online"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/quote2"
+        android:layout_width="383dp"
+        android:layout_height="97dp"
+        android:fontFamily="@font/dancingscript_regular"
+        android:text="Make your will before you drop dead"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textFontWeight="400"
+        android:textSize="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.542" />
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/online"
-            android:layout_marginTop="-100dp"
-            />
-
-        <TextView
-            android:id="@+id/quote2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dancingscript_regular"
-            android:text="Make your will before you drop dead"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textFontWeight="400"
-            android:textSize="36dp"
-            android:layout_marginTop="300dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
-            android:visibility="visible">
-
-            <TextView
+    <TextView
                 android:id="@+id/quote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,30 +54,28 @@
                 android:textSize="36dp"
                 tools:ignore="MissingConstraints" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/loginBtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="120dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/button"
-                android:backgroundTint="#e9b982"
-                android:elevation="6dp"
-                android:text="Login"
-                android:textAllCaps="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/quote"
-                tools:ignore="NotSibling" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button"
+        android:backgroundTint="#e9b982"
+        android:elevation="6dp"
+        android:text="Login"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quote2"
+        tools:ignore="NotSibling" />
 
-            <TextView
+    <TextView
                 android:id="@+id/orText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/loginBtn"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="or"
@@ -101,8 +83,10 @@
                 android:textColor="@color/black"
                 android:textFontWeight="400"
                 android:textSize="18dp"
-                tools:ignore="MissingConstraints"
-                />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loginBtn"
+                tools:ignore="MissingConstraints" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/gotoRegister"
@@ -125,3 +109,6 @@
     </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

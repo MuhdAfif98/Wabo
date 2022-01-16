@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wabo">
 
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/online"
@@ -36,6 +38,30 @@
         <activity
             android:name=".ViewWill_Creator"
             android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyRejectedMore"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyVerifiedMore"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyUnverifiedMore"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyRejected"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyVerified"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyUnverified"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorney"
+            android:exported="false" />
+        <activity
+            android:name=".profileRegistration"
+            android:exported="true" />
         <activity
             android:name=".StartPage"
             android:exported="true"
