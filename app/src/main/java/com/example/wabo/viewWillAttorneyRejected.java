@@ -40,8 +40,8 @@ public class viewWillAttorneyRejected extends AppCompatActivity{
 
     Query WaboDB;
     ListView idRVUnverifiedWill;
-    List<Will> willList;
-    Will will;
+    List<will> willList;
+    will will;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class viewWillAttorneyRejected extends AppCompatActivity{
                 willList.clear();
 
                 for(DataSnapshot studentDatasnap : datasnapshot.getChildren()){
-                    Will will = studentDatasnap.getValue(Will.class);
+                    will will = studentDatasnap.getValue(will.class);
                     willList.add(will);
 
                 }
@@ -81,7 +81,7 @@ public class viewWillAttorneyRejected extends AppCompatActivity{
         idRVUnverifiedWill.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Will will = willList.get(i);
+                will will = willList.get(i);
                 String willTitle = will.getWillTitle();
                 Intent intent = new Intent (getApplicationContext(),viewWillAttorneyRejectedMore.class);
                 intent.putExtra("willTitle",willTitle);

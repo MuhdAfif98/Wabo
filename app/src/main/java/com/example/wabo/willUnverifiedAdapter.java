@@ -18,11 +18,11 @@ import java.util.List;
 public class willUnverifiedAdapter extends ArrayAdapter {
 
     public Activity mContext1;
-    List<Will> willList;
+    List<will> willList;
     // ImageView claimedwillC2;
 
 
-    public willUnverifiedAdapter(Activity mContext1, List<Will> willList){
+    public willUnverifiedAdapter(Activity mContext1, List<will> willList){
         super(mContext1,R.layout.activity_view_will_attorney_unverified, willList);
         this.mContext1 = mContext1;
         this.willList = willList;
@@ -40,7 +40,7 @@ public class willUnverifiedAdapter extends ArrayAdapter {
         TextView willTitle = viewClaimedC.findViewById(R.id.idTVWillTitleUnverified);
         TextView willPenerima = viewClaimedC.findViewById(R.id.idTVWillPenerimaUnverified);
 
-        Will will = willList.get(position);
+        will will = willList.get(position);
 
         // evPickupPoint.setText(Ambulance1.getPickuptime());
         willTitle.setText(will.getWillTitle());
