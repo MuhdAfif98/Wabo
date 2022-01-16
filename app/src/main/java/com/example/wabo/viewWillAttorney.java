@@ -1,6 +1,7 @@
 package com.example.wabo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.widget.Button;
 
 public class viewWillAttorney extends AppCompatActivity {
 
-    Button willUnverified, willVerified, willRejected;
+    CardView willUnverified, willVerified, willRejected;
 
 
     @Override

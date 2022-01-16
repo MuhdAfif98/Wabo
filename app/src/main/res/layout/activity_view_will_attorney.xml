@@ -34,43 +34,124 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
+
+    <!--Write will-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonWillUnverified"
+        android:layout_width="180dp"
+        android:layout_height="218dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.307" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:background="@drawable/writewabo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/seoulhangang_bold"
+            android:text="Unverified Will"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonWillVerified"
+        android:layout_width="180dp"
+        android:layout_height="218dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.307" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:background="@drawable/readwabo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/seoulhangang_bold"
+            android:text="Verified Will"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!--My Account-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonWillRejected"
+        android:layout_width="180dp"
+        android:layout_height="218dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.711" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:background="@drawable/myaccount" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/seoulhangang_bold"
+            android:text="Rejected Will"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    </androidx.cardview.widget.CardView>
+
+
+
+    <Button
+        android:gravity="bottom"
+        app:layout_constraintTop_toBottomOf="@id/buttonWillRejected"
+        android:id="@+id/buttonReturn"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Return">
+
+    </Button>
+
+
     <LinearLayout
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/buttonWillUnverified"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:padding="10dp"
-            android:text="Unverified Will">
-        </Button>
 
-        <Button
-            android:id="@+id/buttonWillVerified"
-            android:text="Verified Will"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:padding="10dp">
-        </Button>
-
-        <Button
-            android:id="@+id/buttonWillRejected"
-            android:text="Rejected Will"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:padding="10dp">
-        </Button>
-
-        <Button
-            android:id="@+id/buttonReturn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Return">
-
-        </Button>
 
     </LinearLayout>
 
