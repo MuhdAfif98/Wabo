@@ -41,11 +41,9 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.firebase:firebase-firestore:24.0.0'
-
     implementation 'com.google.firebase:firebase-database:20.0.3'
     implementation 'com.firebaseui:firebase-ui-database:6.2.1'
     implementation 'com.google.firebase:firebase-database:19.3.1'
-
     implementation 'com.google.firebase:firebase-database:20.0.2'
     implementation 'com.google.android.gms:play-services-cast-framework:20.0.0'
 

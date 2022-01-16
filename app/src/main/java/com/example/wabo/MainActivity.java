@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.Task;
@@ -30,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
     TextView usernameText;
     Button logout;
     String userID;
+
+    CardView writewill;
+    ImageView readwill;
+
     CardView writewill,readwill;
+
 
     FirebaseFirestore firestore;
     FirebaseDatabase firebase;
@@ -47,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         logout = findViewById(R.id.logoutBtn);
         usernameText = findViewById(R.id.usernameText);
         writewill = findViewById(R.id.writewill);
+        readwill = findViewById(R.id.readwill);
 
         readwill = findViewById(R.id.readwill);
 
@@ -56,7 +63,23 @@ public class MainActivity extends AppCompatActivity {
         firebase = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app");
         df = firebase.getReference("Users");
 
+        DocumentReference df = firestore.collection("Users").document(userID);
+        df.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                usernameText.setText(value.getString("Username"));
+            }
+        });
+        readwill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ViewWill_Creator.class));
+                finish();
+            }
+        });
+
         getData();
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 startActivity(new Intent(MainActivity.this, viewWillAttorney.class));
             }
-        });
+        } );
     }
 
 

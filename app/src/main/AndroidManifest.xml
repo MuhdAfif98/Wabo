@@ -12,7 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wabo.NoActionBar">
         <activity
-
+            android:name=".ViewWill_Creator_Verify2"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator_NotVerify2"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator_Claimed2"
+            android:exported="false" />
+        <activity
+            android:name=".ClaimedAdaptor"
+            android:exported="false" />
+        <activity
+            android:name=".VerifyAdaptor"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator_Claimed"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator_NotVerify"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator_Verify"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator"
+            android:exported="false" />
+        <activity
             android:name=".viewWillAttorneyRejectedMore"
             android:exported="false" />
         <activity
@@ -33,10 +59,9 @@
         <activity
             android:name=".viewWillAttorney"
             android:exported="false" />
-
+        <activity
             android:name=".profileRegistration"
             android:exported="true" />
-
         <activity
             android:name=".StartPage"
             android:exported="true"
