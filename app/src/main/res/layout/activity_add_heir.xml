@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".update_heir">
-
+    tools:context=".add_heir">
     <androidx.cardview.widget.CardView
         android:layout_width="413dp"
         android:layout_height="733dp"
@@ -119,7 +118,7 @@
                 app:layout_constraintVertical_bias="0.588" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/updateheirBtn"
+                android:id="@+id/addheirBtn"
                 android:layout_width="308dp"
                 android:layout_height="32dp"
                 android:layout_marginStart="16dp"
@@ -128,7 +127,7 @@
                 android:background="@drawable/button"
                 android:backgroundTint="@color/white"
                 android:elevation="6dp"
-                android:text="update heir"
+                android:text="Add Heir"
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -150,5 +149,4 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

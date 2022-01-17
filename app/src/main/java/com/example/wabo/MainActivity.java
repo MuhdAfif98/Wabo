@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
     TextView usernameText;
     Button logout;
     String userID;
-    CardView writewill, myaccount;
+    CardView writewill, myaccount, claimwabo;
+    String username;
 
     FirebaseFirestore firestore;
     FirebaseDatabase firebase;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         usernameText = findViewById(R.id.usernameText);
         writewill = findViewById(R.id.writewill);
         myaccount = findViewById(R.id.myaccount);
+        claimwabo = findViewById(R.id.claimwabo);
 
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         df.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String username = snapshot.child(userID).child("username").getValue(String.class);
+                username = snapshot.child(userID).child("username").getValue(String.class);
                 usernameText.setText(username);
             }
 
@@ -97,11 +99,27 @@ public class MainActivity extends AppCompatActivity {
         myaccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),account.class));
+                Intent intent = new Intent(MainActivity.this,account.class);
+                intent.putExtra("username",username);
+
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        claimwabo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,detect_claim.class);
+                intent.putExtra("username",username);
+
+                startActivity(intent);
                 finish();
             }
         });
     }
+
+
 
 
 }
