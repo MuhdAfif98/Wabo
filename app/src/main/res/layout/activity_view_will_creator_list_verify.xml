@@ -2,37 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="#FFEDED"
-    >
+    android:background="#F3CCCC"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/CVwilltitle"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:text="Verified Will"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/roboto_bold" />
+        android:fontFamily="@font/roboto_bold"
+        android:text="Verified Will"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/CVwilldescription"
-        android:text="Verified Will"
-        android:textStyle="bold"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:textSize="22dp" >
-    </TextView>
+        android:fontFamily="@font/roboto_regular"
+        android:text="Verified Will"
+        android:textSize="18dp"
+        android:textStyle="italic"></TextView>
+
     <ImageView
         android:id="@+id/verifiedwillC2"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_gravity="end"
         android:layout_marginTop="-50dp"
-        android:layout_marginLeft="350dp"
-        android:src="@drawable/bookread"
-        ></ImageView>
+        android:src="@drawable/bookread"></ImageView>
 
 </LinearLayout>

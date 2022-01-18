@@ -36,11 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     CardView writewill, myaccount, claimwabo;
     String username;
-    Button trying;
 
-
-
-    CardView writewill;
     ImageView readwill;
 
 
@@ -62,12 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
         myaccount = findViewById(R.id.myaccount);
         claimwabo = findViewById(R.id.claimwabo);
-        trying = findViewById(R.id.trying);
 
         readwill = findViewById(R.id.readwill);
-
-        readwill = findViewById(R.id.readwill);
-
 
         auth = FirebaseAuth.getInstance();
 
@@ -89,6 +81,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         getData();
+
+        writewill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,add_will.class);
+                intent.putExtra("username",username);
+
+                startActivity(intent);
+                finish();
+            }
+        });
 
         readwill.setOnClickListener(new View.OnClickListener() {//keba
             @Override
@@ -135,16 +138,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,account.class);
                 intent.putExtra("username",username);
-
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        trying.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,add_will.class);
                 startActivity(intent);
                 finish();
             }
@@ -155,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,detect_claim.class);
                 intent.putExtra("username",username);
-
                 startActivity(intent);
                 finish();
             }

@@ -25,6 +25,9 @@
             android:name=".success_claim"
             android:exported="false" />
         <activity
+            android:name=".account"
+            android:exported="false" />
+        <activity
             android:name=".detect_claim"
             android:exported="false" />
         <activity
@@ -40,7 +43,6 @@
             android:name=".account_update"
             android:exported="true" />
         <activity
-            android:name=".account"
             android:name=".ViewWill_Creator_Verify2"
             android:exported="false" />
         <activity
@@ -48,12 +50,6 @@
             android:exported="false" />
         <activity
             android:name=".ViewWill_Creator_Claimed2"
-            android:exported="false" />
-        <activity
-            android:name=".ClaimedAdaptor"
-            android:exported="false" />
-        <activity
-            android:name=".VerifyAdaptor"
             android:exported="false" />
         <activity
             android:name=".ViewWill_Creator_Claimed"

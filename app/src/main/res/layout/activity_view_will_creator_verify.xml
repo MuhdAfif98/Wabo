@@ -9,10 +9,7 @@
     android:background="#f8f2eb"
     >
 
-
         <LinearLayout
-
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -44,17 +41,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Verified Will"
-                android:textSize="35dp"
+                android:textSize="30dp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/roboto_bold" />
+                android:paddingTop="10dp"
+                android:fontFamily="@font/seoulhangang_bold" />
 
             <ListView
+                android:dividerHeight="5dp"
+                android:divider="#0000ffff"
                 android:id="@+id/myListView2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="568dp"
                 android:layout_marginTop="10dp"
                 android:padding="5dp"></ListView>
+
+            <Button
+                android:id="@+id/backbtn"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:text="Back"
+                />
 
     </LinearLayout>
 </ScrollView>

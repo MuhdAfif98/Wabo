@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -40,6 +41,7 @@ public class ViewWill_Creator_Claimed extends AppCompatActivity {
     ListView myListView3;
     List<will> ViewWill_Creator_ListClaimed;
     will Will1;
+    Button backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class ViewWill_Creator_Claimed extends AppCompatActivity {
         setContentView(R.layout.activity_view_will_creator_claimed);
 
         usernameText = findViewById(R.id.usernameText);
+        backbtn = findViewById(R.id.backbtn);
 
         //show adaptor
         myListView3 = findViewById(R.id.myListView3);
@@ -76,6 +79,14 @@ public class ViewWill_Creator_Claimed extends AppCompatActivity {
             }
         });
         //abih show adaptor
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ViewWill_Creator.class));
+                finish();
+            }
+        });
 
         //Click on listview onclicklistener
         myListView3.setOnItemClickListener(new AdapterView.OnItemClickListener() {

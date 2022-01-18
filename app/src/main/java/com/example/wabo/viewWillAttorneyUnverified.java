@@ -101,4 +101,9 @@ public class viewWillAttorneyUnverified extends AppCompatActivity{
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(),viewWillAttorney.class));
+    }
 }

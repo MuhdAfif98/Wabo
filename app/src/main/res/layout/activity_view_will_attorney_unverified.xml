@@ -56,11 +56,13 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:textAlignment="center"
-                    android:textSize="20dp"
+                    android:textSize="30dp"
+                    android:fontFamily="@font/seoulhangang_bold"
+                    android:textColor="@color/black"
                     android:padding="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Verified Will">
+                    android:text="Unverified Will">
 
                 </TextView>
                 <!--Recycler view for Unverified Will-->
@@ -73,14 +75,16 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/buttonReturn"
-                android:text="Return"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp">
-            </Button>
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/buttonReturn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Return"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="664dp"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

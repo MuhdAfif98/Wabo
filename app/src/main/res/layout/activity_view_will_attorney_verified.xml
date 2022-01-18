@@ -56,11 +56,13 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:textAlignment="center"
-                    android:textSize="20dp"
+                    android:textSize="30dp"
+                    android:textColor="@color/black"
                     android:padding="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Verified Will">
+                    android:text="Verified Will"
+                    android:fontFamily="@font/seoulhangang_bold">
 
                 </TextView>
                 <!--Recycler view for Unverified Will-->

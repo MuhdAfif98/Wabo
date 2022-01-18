@@ -3,26 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/drawable/round_outline.xml" value="0.221875" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_account.xml" value="0.33" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_account_update.xml" value="0.25" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_account_updates.xml" value="0.15989583333333332" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_add_heir.xml" value="0.1" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_add_will.xml" value="0.33" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_detect_claim.xml" value="0.25" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_detect_claims.xml" value="0.28177083333333336" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_fail_claim.xml" value="0.20572916666666666" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_start_page.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_success_claim.xml" value="0.20572916666666666" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_update_heir.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_view_heir.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/activity_will_claim.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/content_detect_claims.xml" value="0.28177083333333336" />
-        <entry key="..\:/Users/PC CUSTOM/Desktop/DEGREE/SEM 5/MOBILE APPS/PROJECT/Wabo/app/src/main/res/layout/list_view_heir.xml" value="0.36666666666666664" />
         <entry key="..\:/User/Documents/GitHub/Wabo/app/src/main/res/layout/activity_login.xml" value="0.17831813576494426" />
         <entry key="..\:/User/Documents/GitHub/Wabo/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/User/Documents/GitHub/Wabo/app/src/main/res/layout/activity_view_will_attornet_verified.xml" value="0.32447916666666665" />
@@ -67,6 +47,12 @@
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/drawable/round_outline.xml" value="0.3828125" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/font/font.xml" value="0.396875" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/font/roboto.xml" value="0.396875" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_account.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_account_update.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_add_heir.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_add_will.xml" value="0.33" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_detect_claim.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_fail_claim.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_main2.xml" value="0.36666666666666664" />
@@ -76,9 +62,15 @@
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_splash.xml" value="0.21" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_start_page.xml" value="0.33" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_success_claim.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_update_heir.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_heir.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_attorney.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_attorney_rejected.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_attorney_unverified.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_attorney_verified.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_creator.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_creator_claimed.xml" value="0.5" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_creator_claimed.xml" value="0.33" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_creator_claimed2.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_creator_list_claimed.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_creator_list_not_verify.xml" value="0.36666666666666664" />
@@ -87,13 +79,18 @@
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_creator_not_verify2.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_creator_verify.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_view_will_creator_verify2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/activity_will_claim.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/list_view_heir.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/view_will_rejected.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/view_will_unverified.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/layout/view_will_verified.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/menu/menu_main.xml" value="0.2" />
         <entry key="..\:/Users/Park Bo Young/AndroidStudioProjects/Wabo/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3828125" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

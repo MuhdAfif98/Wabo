@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,7 +39,7 @@ public class ViewWill_Creator_Verify extends AppCompatActivity {
     ListView myListView2;
     List<will> ViewWill_Creator_ListVerify;
     will Will1;
-
+    Button backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class ViewWill_Creator_Verify extends AppCompatActivity {
 
         //show adaptor
         myListView2 = findViewById(R.id.myListView2);
+        backbtn = findViewById(R.id.backbtn);
         ViewWill_Creator_ListVerify = new ArrayList<>();
 
         WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willStatus").equalTo("Verified");
@@ -71,6 +73,14 @@ public class ViewWill_Creator_Verify extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ViewWill_Creator.class));
+                finish();
             }
         });
 

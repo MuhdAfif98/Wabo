@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,6 +39,7 @@ public class ViewWill_Creator_NotVerify extends AppCompatActivity {
     ListView myListView;
     List<will> ViewWill_Creator_ListNotVerify;
     will Will1;
+    Button backbtn;
 
 
     @Override
@@ -47,6 +49,7 @@ public class ViewWill_Creator_NotVerify extends AppCompatActivity {
 
         //show adaptor
         myListView = findViewById(R.id.myListView);
+        backbtn = findViewById(R.id.backbtn);
         ViewWill_Creator_ListNotVerify = new ArrayList<>();
 
         WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willStatus").equalTo("Unverified");
@@ -72,6 +75,16 @@ public class ViewWill_Creator_NotVerify extends AppCompatActivity {
 
             }
         });
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ViewWill_Creator.class));
+                finish();
+            }
+        });
+
+
         //abih show adaptor
 
         //Click on listview onclicklistener

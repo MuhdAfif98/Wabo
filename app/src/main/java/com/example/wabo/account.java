@@ -121,10 +121,6 @@ public class account extends AppCompatActivity {
                     String heiricfirebase = dataSnapshot.child("heirsic").getValue().toString();
                     String heiraddfirebase = dataSnapshot.child("heirsadd").getValue().toString();
 
-
-                    Heirin.setText(heirnamefirebase);
-                    Heiric.setText(heiricfirebase);
-
                 }
 
 

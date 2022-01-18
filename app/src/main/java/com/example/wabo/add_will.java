@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -78,11 +79,17 @@ public class add_will extends AppCompatActivity {
 
                 reff.child("Will"+String.valueOf(maxid+1)).setValue(willDB);
 
-
-
             }
         });
 
 
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }
 }
