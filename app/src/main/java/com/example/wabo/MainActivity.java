@@ -26,6 +26,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 public class MainActivity extends AppCompatActivity {
     TextView usernameText;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     String userID;
     CardView writewill, myaccount, claimwabo;
     String username;
+    Button trying;
+
 
     FirebaseFirestore firestore;
     FirebaseDatabase firebase;
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         writewill = findViewById(R.id.writewill);
         myaccount = findViewById(R.id.myaccount);
         claimwabo = findViewById(R.id.claimwabo);
+        trying = findViewById(R.id.trying);
 
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
@@ -102,6 +106,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,account.class);
                 intent.putExtra("username",username);
 
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        trying.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,add_will.class);
                 startActivity(intent);
                 finish();
             }

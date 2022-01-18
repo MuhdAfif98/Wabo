@@ -9,11 +9,8 @@ public class Users {
         private String password;
         private String phone;
         private String role;
-        private String heirsname;
-        private String heirsic;
-        private String heirsadd;
 
-        public Users (String name, String email, String address, String nric, String password, String phone, String role, String heirsname, String heirsic, String heirsadd) {
+        public Users (String name, String email, String address, String nric, String password, String phone, String role) {
             this.name = name;
             this.email = email;
             this.address = address;
@@ -21,13 +18,10 @@ public class Users {
             this.password = password;
             this.phone = phone;
             this.role = role;
-            this.heirsname = heirsname;
-            this.heirsic = heirsic;
-            this.heirsadd= heirsadd;
 
         }
 
-        public Users(String s, String toString, String string){
+        public Users(){
         }
 
         public String getName() {
@@ -86,27 +80,4 @@ public class Users {
             this.role = role;
         }
 
-    public String getHeirsname() {
-        return heirsname;
-    }
-
-    public void setHeirsname(String heirsname) {
-        this.heirsname = heirsname;
-    }
-
-    public String getHeirsic() {
-        return heirsic;
-    }
-
-    public void setHeirsic(String heirsic) {
-        this.heirsic = heirsic;
-    }
-
-    public String getHeirsadd() {
-        return heirsadd;
-    }
-
-    public void setHeirsadd(String heirsadd) {
-        this.heirsadd = heirsadd;
-    }
 }

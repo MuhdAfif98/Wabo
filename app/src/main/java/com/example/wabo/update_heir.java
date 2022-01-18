@@ -6,7 +6,9 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.Task;
@@ -23,6 +25,7 @@ public class update_heir extends AppCompatActivity {
 
     private EditText heirnamein, heiricin, heiraddin;
     String UID;
+    ImageView no;
 
     DatabaseReference reff2;
 
@@ -32,21 +35,22 @@ public class update_heir extends AppCompatActivity {
         setContentView(R.layout.activity_update_heir);
 
 
+        String heiric = getIntent().getStringExtra("heiric");
         String username = getIntent().getStringExtra("username");
         String heirfrom = getIntent().getStringExtra("heirfrom");
 
         heirnamein = findViewById(R.id.heirnamein);
-        heiraddin = findViewById(R.id.heirnamein);
+        heiraddin = findViewById(R.id.heiraddin);
         heiricin = findViewById(R.id.heiricin);
-        AppCompatButton updateheirBtn = findViewById(R.id.updateheirBtn);
+        no = findViewById(R.id.no);
 
+        AppCompatButton updateheirBtn = findViewById(R.id.updateheirBtn);
 
         reff2 = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Heir");
 
-
         DAheir dAheir = new DAheir();
 
-        Query queryuname2 = reff2.orderByChild("heirfrom").equalTo(heirfrom);
+        Query queryuname2 = reff2.orderByChild("heirsic").equalTo(heiric);
 
 
         queryuname2.addValueEventListener(new ValueEventListener() {
@@ -62,11 +66,9 @@ public class update_heir extends AppCompatActivity {
                     String heiricfirebase = dataSnapshot.child("heirsic").getValue().toString();
                     String heiraddfirebase = dataSnapshot.child("heirsadd").getValue().toString();
 
-
                     heirnamein.setText(heirnamefirebase);
                     heiricin.setText(heiricfirebase);
                     heiraddin.setText(heiraddfirebase);
-                    //tvphone.setText(heiraddfirebase);
 
                 }
 
@@ -100,6 +102,18 @@ public class update_heir extends AppCompatActivity {
             intent.putExtra("username",username);
             startActivity(intent);
 
+        });
+
+        no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(update_heir.this,account.class);
+                intent.putExtra("username",username);
+
+                startActivity(intent);
+
+            }
         });
 
 

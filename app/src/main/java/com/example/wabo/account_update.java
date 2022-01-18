@@ -7,9 +7,11 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +22,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class account_update extends AppCompatActivity {
 
@@ -28,11 +32,17 @@ public class account_update extends AppCompatActivity {
     private EditText Heirin, Heiric;
     private AppCompatButton addheirBtn, updateBtn;
     private ImageView viewheirBtn;
+    ImageView no;
     String heirfrom;
-    String UID;
+    String UID, UID2;
+    ListView heirs;
+
+
+    List<Heir> heirList;
+    Heir heir;
 
     DatabaseReference reff;
-    DatabaseReference reff2;
+    DatabaseReference reff2,reff3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +63,7 @@ public class account_update extends AppCompatActivity {
         Heiric = findViewById(R.id.Heiric);
         Heirin = findViewById(R.id.Heirin);
         viewheirBtn = findViewById(R.id.viewheirBtn);
+        no = findViewById(R.id.no);
 
         reff = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Users");
         reff2 = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Heir");
@@ -99,6 +110,34 @@ public class account_update extends AppCompatActivity {
             }
         });
 
+
+        updateBtn.setOnClickListener(v ->
+        {
+            HashMap hashMap = new HashMap();
+
+            hashMap.put("name", tvname.getText().toString());
+            hashMap.put("nric", tvic.getText().toString());
+            hashMap.put("password", tvemail.getText().toString());
+            hashMap.put("phone", tvphone.getText().toString());
+            hashMap.put("address", tvaddress.getText().toString());
+
+            reff.child(UID).updateChildren(hashMap).addOnSuccessListener(suc ->
+            {
+                Toast.makeText(this, "record as update", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(account_update.this,account.class);
+                intent.putExtra("username",username);
+
+                startActivity(intent);
+
+            }).addOnFailureListener(er ->
+            {
+                Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
+            });
+
+
+        });
+
         queryuname2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -107,7 +146,7 @@ public class account_update extends AppCompatActivity {
 
                     //call variable from database
 
-                    UID = dataSnapshot.getKey();
+                    UID2 = dataSnapshot.getKey();
                     String heirnamefirebase = dataSnapshot.child("heirsname").getValue().toString();
                     String heiricfirebase = dataSnapshot.child("heirsic").getValue().toString();
                     String heiraddfirebase = dataSnapshot.child("heirsadd").getValue().toString();
@@ -128,25 +167,46 @@ public class account_update extends AppCompatActivity {
             }
         });
 
+        heirs = findViewById(R.id.heirs);
 
-        updateBtn.setOnClickListener(v ->
-        {
-            HashMap<String,Object> hashMap = new HashMap<>();
+        heirList = new ArrayList<>();
 
-            hashMap.put("name", tvname.getText().toString());
-            hashMap.put("nric", tvic.getText().toString());
-            hashMap.put("password", tvemail.getText().toString());
-            hashMap.put("phone", tvphone.getText().toString());
-            hashMap.put("address", tvaddress.getText().toString());
+        reff3 = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Heir");
 
-            dAuser.update(UID,hashMap).addOnSuccessListener(suc ->
-            {
-                Toast.makeText(this, "record as update", Toast.LENGTH_SHORT).show();
-            }).addOnFailureListener(er ->
-            {
-                Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
-            });
+        Query queryheir = reff3.orderByChild("heirfrom").equalTo(heirfrom);
 
+        queryheir.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                heirList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+
+                    heir = dataSnapshot.getValue(Heir.class);
+                    heirList.add(heir);
+
+                }
+
+                list_view_heir_adapter adapter = new list_view_heir_adapter(account_update.this,heirList);
+                heirs.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        heirs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Heir heir = heirList.get(i);
+                String heiric= heir.getHeirsic();
+                Intent intent = new Intent (getApplicationContext(),update_heir.class);
+                intent.putExtra("heiric",heiric);
+                intent.putExtra("username",username);
+                startActivity(intent);
+            }
         });
 
         addheirBtn.setOnClickListener(new View.OnClickListener() {
@@ -169,6 +229,18 @@ public class account_update extends AppCompatActivity {
 
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(account_update.this,account.class);
+                intent.putExtra("username",username);
+
+                startActivity(intent);
+
             }
         });
 

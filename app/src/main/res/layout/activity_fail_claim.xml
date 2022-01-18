@@ -88,24 +88,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emailText" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/claimbbtn"
-                android:layout_width="170dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/button"
-                android:backgroundTint="#e9b982"
-                android:elevation="6dp"
-                android:text="claim"
-                android:textAllCaps="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.398" />
-
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/back"

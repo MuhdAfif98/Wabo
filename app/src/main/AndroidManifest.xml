@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wabo.NoActionBar">
         <activity
-            android:name=".account_updates"
-            android:exported="false" />
+            android:name=".will_claim"
+            android:exported="true" />
+        <activity
+            android:name=".add_will"
+            android:exported="true" />
         <activity
             android:name=".fail_claim"
             android:exported="false" />

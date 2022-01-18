@@ -25,7 +25,7 @@ public class DAuser {
     }
 
     //update user
-    public Task<Void> update(String key, HashMap<String, Object> hashMap)
+    public Task<Void> update(String key, HashMap hashMap)
     {
         return databaseReference.child(key).updateChildren(hashMap);
     }

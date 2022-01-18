@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -16,6 +17,7 @@ public class add_heir extends AppCompatActivity {
 
 String heirfrom;
 DatabaseReference reff;
+    ImageView no;
 
 
     @Override
@@ -29,6 +31,7 @@ DatabaseReference reff;
         final EditText heirsname = findViewById(R.id.heirnamein);
         final EditText heirsic = findViewById(R.id.heiricin);
         final EditText heirsadd= findViewById(R.id.heiraddin);
+        no = findViewById(R.id.no);
         AppCompatButton addheirBtn = findViewById(R.id.addheirBtn);
 
         DAheir dAheir = new DAheir();
@@ -54,6 +57,18 @@ DatabaseReference reff;
             });
         });
 
+
+        no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(add_heir.this,account.class);
+                intent.putExtra("username",username);
+
+                startActivity(intent);
+
+            }
+        });
 
     }
 }
