@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,16 +31,12 @@ public class add_will extends AppCompatActivity {
 
         jumlah = findViewById(R.id.jumlah);
         description = findViewById(R.id.description);
-        status = findViewById(R.id.status);
         title = findViewById(R.id.title);
         ic = findViewById(R.id.ic);
         penerima = findViewById(R.id.penerima);
         add = findViewById(R.id.addbtn);
 
-
         reff = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB");
-
-
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +61,7 @@ public class add_will extends AppCompatActivity {
 
                 String jumlah1 = jumlah.getText().toString();
                 String description1 = description.getText().toString();
-                String status1 = status.getText().toString();
+                String status1 = "Unverified";
                 String title1 = title.getText().toString();
                 String ic1 = ic.getText().toString();
                 String penerima1 = penerima.getText().toString();
@@ -78,8 +75,9 @@ public class add_will extends AppCompatActivity {
                 willDB.setWillPenerima(penerima1);
 
                 reff.child("Will"+String.valueOf(maxid+1)).setValue(willDB);
-
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
+
         });
 
 
