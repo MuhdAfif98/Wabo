@@ -55,7 +55,7 @@ public class ViewWill_Creator_Claimed extends AppCompatActivity {
         myListView3 = findViewById(R.id.myListView3);
         ViewWill_Creator_ListClaimed = new ArrayList<>();
 
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willStatus").equalTo("Claimed");
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willStatus").equalTo("Claimed");
         Query query = WaboDB;//firebase query
         query.addValueEventListener(new ValueEventListener() {  //valueeventlistener..com.google
             @Override

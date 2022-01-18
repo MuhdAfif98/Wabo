@@ -32,7 +32,7 @@ public class ViewWill_Creator_NotVerify2 extends AppCompatActivity {
         CU2willjumlah = findViewById(R.id.CU2willjumlah);
         CU2willpenerima = findViewById(R.id.CU2willpenerima);
 
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willTitle").equalTo(TitleNotVerify);
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willTitle").equalTo(TitleNotVerify);
         Query query = WaboDB;//firebase query
         query.addValueEventListener(new ValueEventListener() {  //valueeventlistener..com.google
             @Override

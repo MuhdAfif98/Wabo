@@ -52,7 +52,7 @@ public class viewWillAttorneyRejected extends AppCompatActivity{
         idRVUnverifiedWill = findViewById(R.id.idRVRejectedWill);
         willList = new ArrayList<>();
 
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willStatus").equalTo("Rejected");
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willStatus").equalTo("Rejected");
         Query query = WaboDB;//firebase query
         query.addValueEventListener(new ValueEventListener() {  //valueeventlistener..com.google
             @Override

@@ -52,7 +52,7 @@ public class viewWillAttorneyVerified extends AppCompatActivity{
         idRVVerifiedWill = findViewById(R.id.idRVVerifiedWill);
         willList = new ArrayList<>();
 
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willStatus").equalTo("Verified");
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willStatus").equalTo("Verified");
         Query query = WaboDB;//firebase query
         query.addValueEventListener(new ValueEventListener() {  //valueeventlistener..com.google
             @Override

@@ -43,9 +43,9 @@ public class viewWillAttorneyUnverifiedMore extends AppCompatActivity{
         media = findViewById(R.id.textMedia);
         status = findViewById(R.id.textStatus);
 
-        mbase = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willTitle").equalTo(willTitle);
+        mbase = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willTitle").equalTo(willTitle);
 
-        DatabaseReference reff = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB");
+        DatabaseReference reff = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB");
         Query query = mbase;
 
         query.addValueEventListener(new ValueEventListener() {

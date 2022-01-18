@@ -25,7 +25,7 @@ public class ViewWill_Creator_Verify2 extends AppCompatActivity {
 
         //fetch listview
         TitleVerify = getIntent().getStringExtra("TitleVerify");
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willTitle").equalTo(TitleVerify);
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willTitle").equalTo(TitleVerify);
         //findby
         CV2willtitle = findViewById(R.id.CV2willtitle);
         CV2willdescription = findViewById(R.id.CV2willdescription);

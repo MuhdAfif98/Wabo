@@ -52,7 +52,7 @@ public class ViewWill_Creator_NotVerify extends AppCompatActivity {
         backbtn = findViewById(R.id.backbtn);
         ViewWill_Creator_ListNotVerify = new ArrayList<>();
 
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willStatus").equalTo("Unverified");
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willStatus").equalTo("Unverified");
         Query query = WaboDB;//firebase query
         query.addValueEventListener(new ValueEventListener() {  //valueeventlistener..com.google
             @Override

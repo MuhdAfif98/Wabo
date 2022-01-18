@@ -35,7 +35,7 @@ public class ViewWill_Creator_Claimed2 extends AppCompatActivity {
         CC2willjumlah = findViewById(R.id.CC2willjumlah);
         CC2willpenerima = findViewById(R.id.CC2willpenerima);
         //
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("WillDB").orderByChild("willTitle").equalTo(TitleClaimed);
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willTitle").equalTo(TitleClaimed);
         Query query = WaboDB;//firebase query
         query.addValueEventListener(new ValueEventListener() {  //valueeventlistener..com.google
             @Override
