@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.Task;
@@ -32,9 +33,15 @@ public class MainActivity extends AppCompatActivity {
     TextView usernameText;
     Button logout;
     String userID;
+
     CardView writewill, myaccount, claimwabo;
     String username;
     Button trying;
+
+
+
+    CardView writewill;
+    ImageView readwill;
 
 
     FirebaseFirestore firestore;
@@ -52,15 +59,23 @@ public class MainActivity extends AppCompatActivity {
         logout = findViewById(R.id.logoutBtn);
         usernameText = findViewById(R.id.usernameText);
         writewill = findViewById(R.id.writewill);
+
         myaccount = findViewById(R.id.myaccount);
         claimwabo = findViewById(R.id.claimwabo);
         trying = findViewById(R.id.trying);
 
+        readwill = findViewById(R.id.readwill);
+
+        readwill = findViewById(R.id.readwill);
+
+
         auth = FirebaseAuth.getInstance();
-        firestore = FirebaseFirestore.getInstance();
+
 
         userID = auth.getCurrentUser().getUid();
         //DocumentReference dff = firestore.collection("Users").document(userID);
+
+
 
         firebase = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app");
         df = firebase.getReference("Users");
@@ -75,9 +90,19 @@ public class MainActivity extends AppCompatActivity {
 
         getData();
 
+        readwill.setOnClickListener(new View.OnClickListener() {//keba
+            @Override
+            public void onClick(View v) {
+                checkRole();
+                finish();
+            }
+        });
+
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userID = auth.getCurrentUser().getUid();
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(),StartPage.class));
                 finish();
@@ -90,7 +115,12 @@ public class MainActivity extends AppCompatActivity {
         df.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 username = snapshot.child(userID).child("username").getValue(String.class);
+
+                userID = auth.getCurrentUser().getUid();
+                String username = snapshot.child(userID).child("username").getValue(String.class);
+
                 usernameText.setText(username);
             }
 
@@ -132,6 +162,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void checkRole() {
+        //EXTRACT DATA FROM DOCUMENT
+        df.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String role = snapshot.child(userID).child("role").getValue(String.class);
+                if(role.equals("isUser")){
+                    startActivity(new Intent(getApplicationContext(),ViewWill_Creator.class));
+                }
+                else{
+                    startActivity(new Intent(getApplicationContext(),viewWillAttorney.class));
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
 
 

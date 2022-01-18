@@ -34,69 +34,11 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello,"
-        android:textSize="24dp"
-        android:fontFamily="@font/roboto_regular"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.101" />
 
-    <TextView
-        android:id="@+id/usernameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_bold"
-        android:text="SINI"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145" />
-
-    <!--Read will-->
-    <androidx.cardview.widget.CardView
-
-        android:layout_width="180dp"
-        android:layout_height="218dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="5dp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307" >
-
-        <ImageView
-            android:id="@+id/readwill"
-            android:layout_width="wrap_content"
-            android:layout_height="176dp"
-            android:background="@drawable/readwabo" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
-            android:layout_marginLeft="30dp"
-            android:fontFamily="@font/seoulhangang_bold"
-            android:text="Read Wabo"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
-
-    </androidx.cardview.widget.CardView>
 
     <!--Write will-->
     <androidx.cardview.widget.CardView
-        android:id="@+id/writewill"
+        android:id="@+id/buttonWillUnverified"
         android:layout_width="180dp"
         android:layout_height="218dp"
         app:cardCornerRadius="15dp"
@@ -114,21 +56,52 @@
             android:layout_height="175dp"
             android:background="@drawable/writewabo"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="160dp"
-                android:layout_marginLeft="30dp"
-                android:fontFamily="@font/seoulhangang_bold"
-                android:text="Write Wabo"
-                android:textColor="@color/black"
-                android:textSize="18dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/seoulhangang_bold"
+            android:text="Unverified Will"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonWillVerified"
+        android:layout_width="180dp"
+        android:layout_height="218dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.307" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:background="@drawable/readwabo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/seoulhangang_bold"
+            android:text="Verified Will"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
 
     </androidx.cardview.widget.CardView>
 
     <!--My Account-->
     <androidx.cardview.widget.CardView
-        android:id="@+id/myaccount"
+        android:id="@+id/buttonWillRejected"
         android:layout_width="180dp"
         android:layout_height="218dp"
         app:cardCornerRadius="15dp"
@@ -152,64 +125,35 @@
             android:layout_marginTop="160dp"
             android:layout_marginLeft="30dp"
             android:fontFamily="@font/seoulhangang_bold"
-            android:text="My Account"
+            android:text="Rejected Will"
             android:textColor="@color/black"
             android:textSize="18dp" />
     </androidx.cardview.widget.CardView>
 
-    <!--Claim Will-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/claimwabo"
-        android:layout_width="180dp"
-        android:layout_height="218dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="5dp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="175dp"
-            android:background="@drawable/claimwabo"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
-            android:layout_marginLeft="30dp"
-            android:fontFamily="@font/seoulhangang_bold"
-            android:text="Claim Wabo"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
-    </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/logoutBtn"
-        android:layout_width="400dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/trying"
-        android:layout_width="wrap_content"
+        android:gravity="bottom"
+        app:layout_constraintTop_toBottomOf="@id/buttonWillRejected"
+        android:id="@+id/buttonReturn"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.124" />
+        android:layout_margin="20dp"
+        android:text="Return">
+
+    </Button>
+
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

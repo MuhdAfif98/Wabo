@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wabo">
 
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/online"
@@ -10,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wabo.NoActionBar">
         <activity
+
             android:name=".will_claim"
             android:exported="true" />
         <activity
@@ -38,6 +41,55 @@
             android:exported="true" />
         <activity
             android:name=".account"
+            android:name=".ViewWill_Creator_Verify2"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator_NotVerify2"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator_Claimed2"
+            android:exported="false" />
+        <activity
+            android:name=".ClaimedAdaptor"
+            android:exported="false" />
+        <activity
+            android:name=".VerifyAdaptor"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator_Claimed"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator_NotVerify"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator_Verify"
+            android:exported="false" />
+        <activity
+            android:name=".ViewWill_Creator"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyRejectedMore"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyVerifiedMore"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyUnverifiedMore"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyRejected"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyVerified"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorneyUnverified"
+            android:exported="false" />
+        <activity
+            android:name=".viewWillAttorney"
+            android:exported="false" />
+        <activity
+            android:name=".profileRegistration"
             android:exported="true" />
         <activity
             android:name=".StartPage"

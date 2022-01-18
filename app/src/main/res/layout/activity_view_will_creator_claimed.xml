@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewWill_Creator_Claimed"
+    android:background="#f8f2eb"
+    >
+
+
+    <LinearLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="416dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="-7dp"
+            android:background="#f0d1ad"
+            android:elevation="6dp"
+            >
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/online"
+                app:civ_border_width="0dp"
+                android:elevation="5dp"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Claimed Will"
+            android:textSize="35dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto_bold" />
+
+
+        <ListView
+            android:layout_marginTop="10dp"
+            android:id="@+id/myListView3"
+            android:layout_width="wrap_content"
+            android:layout_height="568dp"
+            android:padding="5dp"
+            ></ListView>
+
+    </LinearLayout>
+</ScrollView>

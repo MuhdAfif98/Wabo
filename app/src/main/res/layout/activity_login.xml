@@ -127,7 +127,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/loginBtn"
                 android:layout_width="170dp"
-                android:layout_height="50dp"
+                android:layout_height="46dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
@@ -142,9 +142,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/fingerprintBtn"
+                android:id="@+id/fingerprintbtn"
                 android:layout_width="170dp"
-                android:layout_height="50dp"
+                android:layout_height="46dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
@@ -163,15 +163,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="Don't have account?"
-                android:textSize="13dp"
+                android:background="#0000ffff"
                 android:fontFamily="@font/roboto_regular"
+                android:text="Don't have account?"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
-                android:background="#0000ffff"
+                android:textSize="13dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
         </androidx.constraintlayout.widget.ConstraintLayout>
