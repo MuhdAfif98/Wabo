@@ -12,6 +12,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wabo.NoActionBar">
         <activity
+
+            android:name=".will_claim"
+            android:exported="true" />
+        <activity
+            android:name=".add_will"
+            android:exported="true" />
+        <activity
+            android:name=".fail_claim"
+            android:exported="false" />
+        <activity
+            android:name=".success_claim"
+            android:exported="false" />
+        <activity
+            android:name=".detect_claim"
+            android:exported="false" />
+        <activity
+            android:name=".add_heir"
+            android:exported="false" />
+        <activity
+            android:name=".update_heir"
+            android:exported="false" />
+        <activity
+            android:name=".view_heir"
+            android:exported="false" />
+        <activity
+            android:name=".account_update"
+            android:exported="true" />
+        <activity
+            android:name=".account"
             android:name=".ViewWill_Creator_Verify2"
             android:exported="false" />
         <activity

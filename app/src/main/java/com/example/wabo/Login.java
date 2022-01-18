@@ -26,12 +26,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -44,6 +38,7 @@ public class Login extends AppCompatActivity {
     AppCompatButton loginBtn, gotoRegister, fingerprint;
     boolean valid = true;
     FirebaseAuth auth;
+    FirebaseFirestore firestore;
     FirebaseDatabase firebase;
     DatabaseReference df;
     private static final String TAG = "MyActivity";
@@ -51,6 +46,7 @@ public class Login extends AppCompatActivity {
     private Executor executor;
     private BiometricPrompt biometricPrompt;
     private BiometricPrompt.PromptInfo promptInfo;
+
 
     @SuppressLint("WrongConstant")
     @Override
@@ -61,8 +57,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         auth = FirebaseAuth.getInstance();
-        firebase = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app");
-        df = firebase.getReference("Users");
+        firestore = FirebaseFirestore.getInstance();
 
         email = findViewById(R.id.loginEmail);
         password = findViewById(R.id.loginPassword);
@@ -94,8 +89,7 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void onSuccess(AuthResult authResult) {
                             Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            userID = auth.getCurrentUser().getUid();
-                            checkRole();
+                            checkRole(authResult.getUser().getUid());
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -115,6 +109,11 @@ public class Login extends AppCompatActivity {
         });
         
     }
+
+
+    private void checkRole(String uid) {
+        DocumentReference df = firestore.collection("Users").document(uid);
+
 
     private BiometricPrompt getPrompt(){
         Executor executor = ContextCompat.getMainExecutor(this);
@@ -152,25 +151,34 @@ public class Login extends AppCompatActivity {
 
 
     private void checkRole() {
+
         //EXTRACT DATA FROM DOCUMENT
-        df.addValueEventListener(new ValueEventListener() {
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String role = snapshot.child(userID).child("role").getValue(String.class);
-                if(role.equals("isUser")){
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                }
-                else{
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
+
+                //USER IS NORMAL USER
+                if (documentSnapshot.getString("isUser") != null) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
                 }
 
-            }
+                //USER IS ATTORNEY
+                if (documentSnapshot.getString("isAttorney") != null) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                //USER IS HEIR
+                if (documentSnapshot.getString("isHeir") != null) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
+                }
 
             }
         });
+
     }
 
     public boolean checkField(EditText textField) {
@@ -183,13 +191,38 @@ public class Login extends AppCompatActivity {
 
         return valid;
     }
+
     @Override
-    public void onStart() {
+    protected void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = auth.getCurrentUser();
-        if(currentUser != null){
-            currentUser.reload();
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            DocumentReference df = firestore.collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    if (documentSnapshot.getString("isUser") != null) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
+
+                    if (documentSnapshot.getString("isAttorney") != null) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
+
+                    if (documentSnapshot.getString("isHeir") != null) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(getApplicationContext(), Login.class));
+                    finish();
+                }
+            });
         }
     }
 }
