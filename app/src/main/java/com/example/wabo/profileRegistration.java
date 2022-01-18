@@ -6,11 +6,16 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -58,6 +63,15 @@ public class profileRegistration extends AppCompatActivity {
     //for the deprecated thing
     ActivityResultLauncher<String> mGetContent;
 
+    //gps
+    AppCompatButton btnShowLocation;
+    private static final int REQUEST_CODE_PERMISSION = 2;
+    String mPermission = Manifest.permission.ACCESS_FINE_LOCATION;
+
+    // GPSTracker class
+    GPSTracker gps;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +96,8 @@ public class profileRegistration extends AppCompatActivity {
                 String Nric = nric.getText().toString();
                 String Phone = phone.getText().toString();
                 String Address = address.getText().toString();
+                Double GPSLa = gps.getLatitude();
+                Double GPSLo = gps.getLongitude();
 
                 FirebaseUser auth = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -89,9 +105,55 @@ public class profileRegistration extends AppCompatActivity {
                 df.child(auth.getUid()).child("nric").setValue(Nric);
                 df.child(auth.getUid()).child("phone").setValue(Phone);
                 df.child(auth.getUid()).child("address").setValue(Address);
+                df.child(auth.getUid()).child("Latitude").setValue(GPSLa);
+                df.child(auth.getUid()).child("Longitude").setValue(GPSLo);
 
                 Toast.makeText(profileRegistration.this, "Data added", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
+            }
+        });
+
+        //gps function
+
+        try {
+            if (ActivityCompat.checkSelfPermission(this, mPermission)
+                    != PackageManager.PERMISSION_GRANTED) {
+
+                ActivityCompat.requestPermissions(this, new String[]{mPermission},
+                        REQUEST_CODE_PERMISSION);
+
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        btnShowLocation = (AppCompatButton) findViewById(R.id.gpsBtn);
+
+        // show location button click event
+        btnShowLocation.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // create class object
+                gps = new GPSTracker(profileRegistration.this);
+
+                // check if GPS enabled
+                if(gps.canGetLocation()){
+
+                    double latitude = gps.getLatitude();
+                    double longitude = gps.getLongitude();
+
+                    // \n is for new line
+                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: "
+                            + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+                }else{
+                    // can't get location
+                    // GPS or Network is not enabled
+                    // Ask user to enable GPS/network in settings
+                    gps.showSettingsAlert();
+                }
 
             }
         });

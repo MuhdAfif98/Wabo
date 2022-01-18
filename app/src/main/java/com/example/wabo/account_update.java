@@ -3,8 +3,12 @@ package com.example.wabo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -43,6 +47,15 @@ public class account_update extends AppCompatActivity {
 
     DatabaseReference reff;
     DatabaseReference reff2,reff3;
+
+    //gps
+
+    AppCompatButton btnShowLocation;
+    private static final int REQUEST_CODE_PERMISSION = 2;
+    String mPermission = Manifest.permission.ACCESS_FINE_LOCATION;
+
+    // GPSTracker class
+    GPSTracker gps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +131,8 @@ public class account_update extends AppCompatActivity {
             hashMap.put("password", tvemail.getText().toString());
             hashMap.put("phone", tvphone.getText().toString());
             hashMap.put("address", tvaddress.getText().toString());
+            hashMap.put("Longitude", gps.getLongitude());
+            hashMap.put("Latitude", gps.getLatitude());
 
             reff.child(UID).updateChildren(hashMap).addOnSuccessListener(suc ->
             {
@@ -223,6 +238,50 @@ public class account_update extends AppCompatActivity {
                 intent.putExtra("username",username);
 
                 startActivity(intent);
+
+            }
+        });
+
+        //gps function
+
+        try {
+            if (ActivityCompat.checkSelfPermission(this, mPermission)
+                    != PackageManager.PERMISSION_GRANTED) {
+
+                ActivityCompat.requestPermissions(this, new String[]{mPermission},
+                        REQUEST_CODE_PERMISSION);
+
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        btnShowLocation = (AppCompatButton) findViewById(R.id.gpsBtn);
+
+        // show location button click event
+        btnShowLocation.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                // create class object
+                gps = new GPSTracker(account_update.this);
+
+                // check if GPS enabled
+                if(gps.canGetLocation()){
+
+                    double latitude = gps.getLatitude();
+                    double longitude = gps.getLongitude();
+
+                    // \n is for new line
+                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: "
+                            + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+                }else{
+                    // can't get location
+                    // GPS or Network is not enabled
+                    // Ask user to enable GPS/network in settings
+                    gps.showSettingsAlert();
+                }
 
             }
         });
