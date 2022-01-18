@@ -31,7 +31,7 @@ public class account_update extends AppCompatActivity {
     private EditText tvemail,tvic,tvphone,tvaddress,tvname;
     private EditText Heirin, Heiric;
     private AppCompatButton addheirBtn, updateBtn;
-    private ImageView viewheirBtn;
+
     ImageView no;
     String heirfrom;
     String UID, UID2;
@@ -60,9 +60,7 @@ public class account_update extends AppCompatActivity {
         tvaddress = findViewById(R.id.addressin);
         updateBtn = findViewById(R.id.updateBtn);
         addheirBtn = findViewById(R.id.addheirBtn);
-        Heiric = findViewById(R.id.Heiric);
-        Heirin = findViewById(R.id.Heirin);
-        viewheirBtn = findViewById(R.id.viewheirBtn);
+
         no = findViewById(R.id.no);
 
         reff = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Users");
@@ -151,9 +149,6 @@ public class account_update extends AppCompatActivity {
                     String heiricfirebase = dataSnapshot.child("heirsic").getValue().toString();
                     String heiraddfirebase = dataSnapshot.child("heirsadd").getValue().toString();
 
-
-                    Heirin.setText(heirnamefirebase);
-                    Heiric.setText(heiricfirebase);
                     //tvphone.setText(heiraddfirebase);
 
                 }
@@ -214,18 +209,6 @@ public class account_update extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(account_update.this,add_heir.class);
                 intent.putExtra("username",username);
-
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        viewheirBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(account_update.this,update_heir.class);
-                intent.putExtra("username",username);
-                intent.putExtra("heirfrom",heirfrom);
 
                 startActivity(intent);
                 finish();
