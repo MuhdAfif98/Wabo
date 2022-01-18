@@ -29,7 +29,7 @@ import java.util.List;
 
 public class account extends AppCompatActivity {
 
-    private TextView tvemail,tvic,tvphone,tvaddress,tvname,tvusername,Heirin, Heiric;
+    private TextView tvemail,tvic,tvphone,tvaddress,tvname,tvusername,Heirin, Heiric , GPSLo, GPSLa;
     ImageView no;
     AppCompatButton viewBtn;
     String UID;
@@ -59,6 +59,8 @@ public class account extends AppCompatActivity {
         Heirin = findViewById(R.id.Heirin);
         Heiric = findViewById(R.id.Heiric);
         no = findViewById(R.id.no);
+        GPSLo = findViewById(R.id.GPSLo);
+        GPSLa = findViewById(R.id.GPSLa);
 
         viewBtn = findViewById(R.id.viewBtn);
 
@@ -88,6 +90,8 @@ public class account extends AppCompatActivity {
                     String icfirebase = dataSnapshot.child("nric").getValue().toString();
                     String phonefirebase = dataSnapshot.child("phone").getValue().toString();
                     String addressfirebase = dataSnapshot.child("address").getValue().toString();
+                    String GPSLofirebase = dataSnapshot.child("Longitude").getValue().toString();
+                    String GPSLafirebase = dataSnapshot.child("Latitude").getValue().toString();
 
 
                     tvemail.setText(emailfirebase);
@@ -95,6 +99,8 @@ public class account extends AppCompatActivity {
                     tvphone.setText(phonefirebase);
                     tvaddress.setText(addressfirebase);
                     tvic.setText(icfirebase);
+                    GPSLo.setText(GPSLofirebase);
+                    GPSLa.setText(GPSLafirebase);
 
                 }
 
