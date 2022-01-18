@@ -70,19 +70,6 @@ public class Login extends AppCompatActivity {
 
         loginBtn = findViewById(R.id.loginBtn);
         gotoRegister = findViewById(R.id.gotoRegister);
-        fingerprint = findViewById(R.id.fingerprintbtn);
-
-        fingerprint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                        .setTitle("Please verify")
-                        .setDescription("User authentication is required")
-                        .setNegativeButtonText("Cancel")
-                        .build();
-                getPrompt().authenticate(promptInfo);
-            }
-        });
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

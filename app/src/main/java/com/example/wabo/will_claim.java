@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +26,7 @@ public class will_claim extends AppCompatActivity {
     AppCompatButton add;
     DatabaseReference reff;
     String UID;
+    ImageView backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class will_claim extends AppCompatActivity {
         ic = findViewById(R.id.ic);
         penerima = findViewById(R.id.penerima);
         add = findViewById(R.id.addbtn);
+        backbtn = findViewById(R.id.no);
 
         reff = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB");
 
@@ -77,6 +80,14 @@ public class will_claim extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),detect_claim.class));
+                finish();
             }
         });
 

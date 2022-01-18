@@ -54,6 +54,13 @@ public class add_will extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                        .setTitle("Please verify")
+                        .setDescription("User authentication is required")
+                        .setNegativeButtonText("Cancel")
+                        .build();
+                getPrompt().authenticate(promptInfo);
+
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -91,12 +98,7 @@ public class add_will extends AppCompatActivity {
 
                 reff.push().setValue(willDB);
 
-                BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                        .setTitle("Please verify")
-                        .setDescription("User authentication is required")
-                        .setNegativeButtonText("Cancel")
-                        .build();
-                getPrompt().authenticate(promptInfo);
+
             }
         });
 

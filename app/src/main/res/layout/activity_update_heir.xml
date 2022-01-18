@@ -35,25 +35,26 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.056"
+                app:layout_constraintHorizontal_bias="0.072"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.361" />
+                app:layout_constraintVertical_bias="0.32" />
 
             <EditText
                 android:id="@+id/heirnamein"
                 android:layout_width="337dp"
                 android:layout_height="31dp"
                 android:background="@drawable/edittext"
+                android:elevation="6dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.21"
+                app:layout_constraintHorizontal_bias="0.342"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.397" />
+                app:layout_constraintVertical_bias="0.354" />
 
             <TextView
                 android:id="@+id/heirictext"
@@ -66,26 +67,27 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.056"
+                app:layout_constraintHorizontal_bias="0.082"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.438" />
+                app:layout_constraintVertical_bias="0.417" />
+
 
             <EditText
                 android:id="@+id/heiricin"
                 android:layout_width="337dp"
                 android:layout_height="35dp"
                 android:background="@drawable/edittext"
+                android:elevation="6dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.21"
+                app:layout_constraintHorizontal_bias="0.342"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.479" />
-
+                app:layout_constraintVertical_bias="0.457" />
 
             <TextView
                 android:id="@+id/heiraddtext"
@@ -98,25 +100,26 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.056"
+                app:layout_constraintHorizontal_bias="0.073"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.534" />
+                app:layout_constraintVertical_bias="0.527" />
 
             <EditText
                 android:id="@+id/heiraddin"
                 android:layout_width="337dp"
                 android:layout_height="35dp"
                 android:background="@drawable/edittext"
+                android:elevation="6dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.263"
+                app:layout_constraintHorizontal_bias="0.342"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.588" />
+                app:layout_constraintVertical_bias="0.568" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/updateheirBtn"
@@ -126,26 +129,26 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/button"
-                android:backgroundTint="@color/white"
                 android:elevation="6dp"
-                android:text="update heir"
+                android:text="Update Heir"
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.397"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.463"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.191"
-                app:srcCompat="@drawable/usericon" />
+                app:layout_constraintVertical_bias="0.107"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/user" />
 
             <ImageView
                 android:id="@+id/no"
@@ -153,10 +156,10 @@
                 android:layout_height="35dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.065"
+                app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.094"
+                app:layout_constraintVertical_bias="0.047"
                 app:srcCompat="@drawable/no" />
 
 
