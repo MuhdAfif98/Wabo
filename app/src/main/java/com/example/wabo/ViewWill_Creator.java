@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -32,6 +33,7 @@ public class ViewWill_Creator extends AppCompatActivity {
     Button mainpageBtn;
     FirebaseFirestore firestore;
     DatabaseReference df;
+    FirebaseDatabase firebase;
     FirebaseAuth auth;
 
     @Override
@@ -47,6 +49,8 @@ public class ViewWill_Creator extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        firebase = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app");
+        df = firebase.getReference("Users");
         getData();
 
         //Button homepage

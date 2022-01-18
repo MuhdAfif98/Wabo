@@ -46,19 +46,6 @@ public class ViewWill_Creator_Verify extends AppCompatActivity {
         setContentView(R.layout.activity_view_will_creator_verify);
 
 
-        //show idd
-        usernameText = findViewById(R.id.usernameText);
-        auth = FirebaseAuth.getInstance();
-        firestore = FirebaseFirestore.getInstance();
-        userID = auth.getCurrentUser().getUid();
-        DocumentReference df = firestore.collection("Users").document(userID);
-        df.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                usernameText.setText(value.getString("Username"));
-            }
-        });
-        //abih show id
         //show adaptor
         myListView2 = findViewById(R.id.myListView2);
         ViewWill_Creator_ListVerify = new ArrayList<>();
