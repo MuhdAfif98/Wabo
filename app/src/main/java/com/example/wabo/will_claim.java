@@ -86,7 +86,7 @@ public class will_claim extends AppCompatActivity {
 
                 HashMap hashMap = new HashMap();
 
-                hashMap.put("willStatus","Claim");
+                hashMap.put("willStatus","Claimed");
 
                 reff.child(UID).updateChildren(hashMap).addOnSuccessListener(suc ->
                 {

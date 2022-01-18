@@ -122,7 +122,6 @@ public class Login extends AppCompatActivity {
         BiometricPrompt.AuthenticationCallback callback = new BiometricPrompt.AuthenticationCallback() {
             @Override
             public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
-
                 super.onAuthenticationError(errorCode, errString);
                 notifyUser(errString.toString());
             }
@@ -130,9 +129,10 @@ public class Login extends AppCompatActivity {
             @Override
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
-                userID = auth.getCurrentUser().getUid();
+                //userID = auth.getCurrentUser().getUid();
                 notifyUser("Authentication succeed");
-                checkRole();
+                //checkRole();
+                startActivity(new Intent(getApplicationContext(),test.class));
             }
 
             @Override

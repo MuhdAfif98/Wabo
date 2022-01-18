@@ -9,6 +9,16 @@ public class WillDB {
     private String willJumlah;
     private String willTitle;
 
+    public String getWillOwner() {
+        return willOwner;
+    }
+
+    public void setWillOwner(String willOwner) {
+        this.willOwner = willOwner;
+    }
+
+    private String willOwner;
+
     public WillDB() {
     }
 

@@ -73,18 +73,16 @@
                     android:layout_marginTop="10dp"
                     android:padding="5dp"></ListView>
 
+                <Button
+                    android:id="@+id/buttonReturn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Return"></Button>
+
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/buttonReturn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Return"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="664dp"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

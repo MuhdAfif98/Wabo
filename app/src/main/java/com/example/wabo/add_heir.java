@@ -10,15 +10,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class add_heir extends AppCompatActivity {
 
-String heirfrom;
-DatabaseReference reff;
+    String heirfrom;
+    DatabaseReference reff;
     ImageView no;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

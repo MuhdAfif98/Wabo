@@ -51,8 +51,10 @@ public class ViewWill_Creator_Verify extends AppCompatActivity {
         myListView2 = findViewById(R.id.myListView2);
         backbtn = findViewById(R.id.backbtn);
         ViewWill_Creator_ListVerify = new ArrayList<>();
+        auth = FirebaseAuth.getInstance();
+        userID = auth.getCurrentUser().getUid();
 
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willStatus").equalTo("Verified");
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willOwner").equalTo(userID);
         Query query = WaboDB;//firebase query
         query.addValueEventListener(new ValueEventListener() {  //valueeventlistener..com.google
             @Override
@@ -60,8 +62,10 @@ public class ViewWill_Creator_Verify extends AppCompatActivity {
                 ViewWill_Creator_ListVerify.clear();
 
                 for(DataSnapshot studentDatasnap : datasnapshot.getChildren()){
-                    will Will1 = studentDatasnap.getValue(will.class);
-                    ViewWill_Creator_ListVerify.add(Will1);
+                    if (studentDatasnap.child("willStatus").getValue().toString().matches("Verified")) {
+                        will Will1 = studentDatasnap.getValue(will.class);
+                        ViewWill_Creator_ListVerify.add(Will1);
+                    }
 
                 }
 

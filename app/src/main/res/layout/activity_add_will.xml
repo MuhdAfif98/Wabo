@@ -25,7 +25,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.83" />
+                app:layout_constraintVertical_bias="0.705" />
 
             <TextView
                 android:id="@+id/heiraddtext3"
@@ -41,7 +41,7 @@
                 app:layout_constraintHorizontal_bias="0.104"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.787" />
+                app:layout_constraintVertical_bias="0.664" />
 
             <EditText
                 android:id="@+id/ic"
@@ -174,7 +174,7 @@
                 android:background="@drawable/button"
                 android:backgroundTint="#e9b982"
                 android:elevation="6dp"
-                android:text="Sign Up"
+                android:text="Add Will"
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

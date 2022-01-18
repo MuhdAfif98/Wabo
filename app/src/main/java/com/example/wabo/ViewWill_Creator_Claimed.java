@@ -50,12 +50,15 @@ public class ViewWill_Creator_Claimed extends AppCompatActivity {
 
         usernameText = findViewById(R.id.usernameText);
         backbtn = findViewById(R.id.backbtn);
+        auth = FirebaseAuth.getInstance();
+        userID = auth.getCurrentUser().getUid();
+
 
         //show adaptor
         myListView3 = findViewById(R.id.myListView3);
         ViewWill_Creator_ListClaimed = new ArrayList<>();
 
-        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willStatus").equalTo("Claimed");
+        WaboDB = FirebaseDatabase.getInstance("https://wabo-36023-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("willDB").orderByChild("willOwner").equalTo(userID);
         Query query = WaboDB;//firebase query
         query.addValueEventListener(new ValueEventListener() {  //valueeventlistener..com.google
             @Override
@@ -63,8 +66,10 @@ public class ViewWill_Creator_Claimed extends AppCompatActivity {
                 ViewWill_Creator_ListClaimed.clear();
 
                 for(DataSnapshot studentDatasnap : datasnapshot.getChildren()){
-                    will Will1 = studentDatasnap.getValue(will.class);
-                    ViewWill_Creator_ListClaimed.add(Will1);
+                    if (studentDatasnap.child("willStatus").getValue().toString().matches("Claimed")) {
+                        will Will1 = studentDatasnap.getValue(will.class);
+                        ViewWill_Creator_ListClaimed.add(Will1);
+                    }
 
                 }
 
